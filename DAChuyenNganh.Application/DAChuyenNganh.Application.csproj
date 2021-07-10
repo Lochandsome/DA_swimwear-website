@@ -4,4 +4,10 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DAChuyenNganh.Data.EF\DAChuyenNganh.Data.EF.csproj" />
+    <ProjectReference Include="..\DAChuyenNganh.Data\DAChuyenNganh.Data.csproj" />
+    <ProjectReference Include="..\DAChuyenNganh.Utilities\DAChuyenNganh.Utilities.csproj" />
+  </ItemGroup>
+
 </Project>
