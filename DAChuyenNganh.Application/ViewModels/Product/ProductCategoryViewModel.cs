@@ -33,3 +33,5 @@ namespace DAChuyenNganh.Application.ViewModels.Product
         public ICollection<ProductViewModel> Products { set; get; }
     }
 }
+// 1 số ng hỏi tại sao không dùng entity luôn mà phải dùng viewmodel : tại vì đôi khi trong nghiêp vụ chúng ta muốn thêm
+// 1 số thuôc tính nó giúp chúng ta taho tác bên ngoài , gộp 2 model lại thành 1, thif không bị phụ Thuộc vào entity, linh hoạt hơn
