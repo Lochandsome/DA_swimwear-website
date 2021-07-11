@@ -10,4 +10,8 @@
     <ProjectReference Include="..\DAChuyenNganh.Utilities\DAChuyenNganh.Utilities.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.2.1" />
+  </ItemGroup>
+
 </Project>

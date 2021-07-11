@@ -1,6 +1,11 @@
-﻿using DAChuyenNganh.Data;
+﻿using AutoMapper;
+using DAChuyenNganh.Application.Implementation;
+using DAChuyenNganh.Application.Interfaces;
+using DAChuyenNganh.Data;
 using DAChuyenNganh.Data.EF;
+using DAChuyenNganh.Data.EF.Repositories;
 using DAChuyenNganh.Data.Entities;
+using DAChuyenNganh.Data.IRepositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -48,7 +53,14 @@ namespace DAChuyenNganh
             services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
 
+            services.AddSingleton(Mapper.Configuration);
+            services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<AutoMapper.IConfigurationProvider>(), sp.GetService));
+
             services.AddTransient<DbInitializer>();
+
+            services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
+
+            services.AddTransient<IProductCategoryService, ProductCategoryService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
