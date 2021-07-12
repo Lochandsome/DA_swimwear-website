@@ -6,6 +6,7 @@ using DAChuyenNganh.Data.EF;
 using DAChuyenNganh.Data.EF.Repositories;
 using DAChuyenNganh.Data.Entities;
 using DAChuyenNganh.Data.IRepositories;
+using DAChuyenNganh.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -76,6 +77,8 @@ namespace DAChuyenNganh
             services.AddSingleton(Mapper.Configuration);
             services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<AutoMapper.IConfigurationProvider>(), sp.GetService));
 
+            services.AddTransient<IEmailSender, EmailSender>();
+
             services.AddTransient<DbInitializer>();
 
             services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
@@ -110,6 +113,9 @@ namespace DAChuyenNganh
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
+                routes.MapRoute(name: "areaRoute",
+                    template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
