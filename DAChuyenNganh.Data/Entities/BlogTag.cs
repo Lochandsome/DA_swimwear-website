@@ -11,6 +11,7 @@ namespace DAChuyenNganh.Data.Entities
     {
         public int BlogId { set; get; }
 
+
         public string TagId { set; get; }
 
         [ForeignKey("BlogId")]

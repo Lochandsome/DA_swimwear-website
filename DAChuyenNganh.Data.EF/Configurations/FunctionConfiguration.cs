@@ -12,9 +12,12 @@ namespace DAChuyenNganh.Data.EF.Configurations
     {
         public override void Configure(EntityTypeBuilder<Function> entity)
         {
+            //entity.HasKey(c => c.Id);
+            //entity.Property(c => c.Id).IsRequired()
+            //.HasColumnType("varchar(128)");
             entity.HasKey(c => c.Id);
             entity.Property(c => c.Id).IsRequired()
-            .HasColumnType("varchar(128)");
+                .HasMaxLength(128).IsUnicode(false);
             // etc.
         }
     }

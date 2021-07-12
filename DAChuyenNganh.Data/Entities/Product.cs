@@ -48,7 +48,7 @@ namespace DAChuyenNganh.Data.Entities
 
         [StringLength(255)]
         public string Unit { get; set; }
-        //chỉ định khóa ngoại ở chỗ này
+
         [ForeignKey("CategoryId")]
         public virtual ProductCategory ProductCategory { set; get; }
 
