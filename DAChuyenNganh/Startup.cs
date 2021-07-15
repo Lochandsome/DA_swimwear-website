@@ -6,6 +6,7 @@ using DAChuyenNganh.Data.EF;
 using DAChuyenNganh.Data.EF.Repositories;
 using DAChuyenNganh.Data.Entities;
 using DAChuyenNganh.Data.IRepositories;
+using DAChuyenNganh.Helpers;
 using DAChuyenNganh.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -84,6 +85,8 @@ namespace DAChuyenNganh
             services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddTransient<DbInitializer>();
+
+            services.AddScoped<IUserClaimsPrincipalFactory<AppUser>, CustomClaimsPrincipalFactory>();
 
             services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
 

@@ -1,4 +1,5 @@
-﻿using DAChuyenNganh.Models;
+﻿using DAChuyenNganh.Extensions;
+using DAChuyenNganh.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace DAChuyenNganh.Controllers
     {
         public IActionResult Index()
         {
+            var email = User.GetSpecificClaim("Email");
             return View();
         }
 
