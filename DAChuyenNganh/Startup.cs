@@ -88,11 +88,14 @@ namespace DAChuyenNganh
 
             services.AddScoped<IUserClaimsPrincipalFactory<AppUser>, CustomClaimsPrincipalFactory>();
 
-            services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
-
-            services.AddTransient<IProductCategoryService, ProductCategoryService>();
-
             services.AddMvc().AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+
+            //Repositories
+            services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
+            services.AddTransient<IFunctionRepository, FunctionRepository>();
+            //Serrvices
+            services.AddTransient<IProductCategoryService, ProductCategoryService>();
+            services.AddTransient<IFunctionService, FunctionService>();
 
             //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

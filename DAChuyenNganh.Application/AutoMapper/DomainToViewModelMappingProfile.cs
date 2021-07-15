@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DAChuyenNganh.Application.ViewModels.Product;
+using DAChuyenNganh.Application.ViewModels.System;
 using DAChuyenNganh.Data.Entities;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,8 @@ namespace DAChuyenNganh.Application.AutoMapper
         public DomainToViewModelMappingProfile()
         {
             CreateMap<ProductCategory, ProductCategoryViewModel>();
+            CreateMap<Function, FunctionViewModel>();
+
         }
     }
 }
