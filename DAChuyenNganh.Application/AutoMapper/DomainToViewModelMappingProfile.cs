@@ -13,6 +13,7 @@ namespace DAChuyenNganh.Application.AutoMapper
         public DomainToViewModelMappingProfile()
         {
             CreateMap<ProductCategory, ProductCategoryViewModel>();
+            CreateMap<Product, ProductViewModel>();
             CreateMap<Function, FunctionViewModel>();
 
         }

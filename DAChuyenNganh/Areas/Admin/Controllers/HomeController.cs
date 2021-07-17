@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAChuyenNganh.Areas.Admin.Controllers
 {
-    [Area("Admin")]
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public IActionResult Index()
         {
