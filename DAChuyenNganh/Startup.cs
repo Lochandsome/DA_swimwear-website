@@ -7,6 +7,7 @@ using DAChuyenNganh.Data.EF.Repositories;
 using DAChuyenNganh.Data.Entities;
 using DAChuyenNganh.Data.IRepositories;
 using DAChuyenNganh.Helpers;
+using DAChuyenNganh.Infrastructure.Interfaces;
 using DAChuyenNganh.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -89,6 +90,9 @@ namespace DAChuyenNganh
             services.AddScoped<IUserClaimsPrincipalFactory<AppUser>, CustomClaimsPrincipalFactory>();
 
             services.AddMvc().AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+
+            services.AddTransient(typeof(IUnitOfWork), typeof(EFUnitOfWork));
+            services.AddTransient(typeof(IRepository<,>), typeof(EFRepository<,>));
 
             //Repositories
             services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
