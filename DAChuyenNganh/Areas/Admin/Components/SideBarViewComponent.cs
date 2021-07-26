@@ -25,7 +25,7 @@ namespace DAChuyenNganh.Areas.Admin.Components
             var roles = ((ClaimsPrincipal)User).GetSpecificClaim("Roles");
             List<FunctionViewModel> functions;
             // kiểm tra nếu nó thuộc quyền của admin thì mình cho nó hiển thị hết cái menu
-            if (roles.Split(";").Contains(CommonConstants.AdminRole))
+            if (roles.Split(";").Contains(CommonConstants.AppRole.AdminRole))
             {
                 functions = await _functionService.GetAll(string.Empty);
             }
@@ -33,6 +33,8 @@ namespace DAChuyenNganh.Areas.Admin.Components
             {
                 //TODO: Get by permission
                 functions = new List<FunctionViewModel>();
+
+                // functions = await _functionService.GetAll(string.Empty);
             }
             return View(functions);
         }

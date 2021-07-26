@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using DAChuyenNganh.Application.Implementation;
 using DAChuyenNganh.Application.Interfaces;
+using DAChuyenNganh.Authorization;
 using DAChuyenNganh.Data;
 using DAChuyenNganh.Data.EF;
 using DAChuyenNganh.Data.EF.Repositories;
@@ -9,6 +10,7 @@ using DAChuyenNganh.Data.IRepositories;
 using DAChuyenNganh.Helpers;
 using DAChuyenNganh.Infrastructure.Interfaces;
 using DAChuyenNganh.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -107,6 +109,9 @@ namespace DAChuyenNganh
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IRoleService, RoleService>();
+
+            services.AddTransient<IAuthorizationHandler, BaseResourceAuthorizationHandler>();
+
 
             //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
