@@ -27,7 +27,7 @@ namespace DAChuyenNganh.Areas.Admin.Components
             // kiểm tra nếu nó thuộc quyền của admin thì mình cho nó hiển thị hết cái menu
             if (roles.Split(";").Contains(CommonConstants.AdminRole))
             {
-                functions = await _functionService.GetAll();
+                functions = await _functionService.GetAll(string.Empty);
             }
             else
             {
