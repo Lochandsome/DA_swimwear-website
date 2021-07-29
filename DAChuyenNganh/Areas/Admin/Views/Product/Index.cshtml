@@ -7,6 +7,7 @@
 }
 @section Scripts{
     <script src="~/lib/jQuery-EasyUI/jquery.easyui.min.js"></script>
+    <script src="~/app/controllers/product/quantity-management.js"></script>
     <script src="~/app/controllers/product/index.js"></script>
     <script>
         var product = new productController();
@@ -88,6 +89,9 @@
         <th scope="row">
             <button class="btn btn-default btn-sm btn-edit" data-id="{{Id}}"><i class="fa fa-pencil"></i></button>
             <button class="btn btn-danger btn-sm btn-delete"  data-id="{{Id}}"><i class="fa fa-trash"></i></button>
+            <a href="#" data-id="{{Id}}" class="btn btn-xs btn-images"><i class="fa fa-image"></i></a>
+            <a href="#" data-id="{{Id}}" class="btn btn-xs btn-quantity"><i class="fa fa-hourglass-start"></i></a>
+            <a href="#" data-id="{{Id}}" class="btn btn-xs btn-whole-price"><i class="fa fa-money"></i></a>
         </th>
         <td>{{Name}}</td>
         <td>{{CategoryName}}</td>
@@ -97,4 +101,6 @@
         <td>{{{Status}}}</td>
     </tr>
 </script>
-@Html.Partial("_AddEditModal.cshtml")
+<partial name="_AddEditModal.cshtml" />
+@*@Html.Partial("_AddEditModal.cshtml")*@
+@Html.Partial("_QuantityManagement.cshtml")

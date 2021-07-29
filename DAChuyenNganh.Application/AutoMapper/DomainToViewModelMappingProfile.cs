@@ -24,6 +24,8 @@ namespace DAChuyenNganh.Application.AutoMapper
             CreateMap<Color, ColorViewModel>();
             CreateMap<Size, SizeViewModel>();
 
+            CreateMap<ProductQuantity, ProductQuantityViewModel>().MaxDepth(2);
+
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using DAChuyenNganh.Application.Interfaces;
 using DAChuyenNganh.Application.ViewModels.Product;
 using DAChuyenNganh.Utilities.Helpers;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
@@ -14,11 +15,15 @@ namespace DAChuyenNganh.Areas.Admin.Controllers
     {
         private IProductService _productService;
         private IProductCategoryService _productCategoryService;
+        private readonly IHostingEnvironment _hostingEnvironment;
 
-        public ProductController(IProductService productService, IProductCategoryService productCategoryService)
+        public ProductController(IProductService productService,
+            IProductCategoryService productCategoryService,
+            IHostingEnvironment hostingEnvironment)
         {
             _productService = productService;
             _productCategoryService = productCategoryService;
+            _hostingEnvironment = hostingEnvironment;
         }
 
         public IActionResult Index()
@@ -96,7 +101,20 @@ namespace DAChuyenNganh.Areas.Admin.Controllers
                 return new OkObjectResult(id);
             }
         }
+        [HttpPost]
+        public IActionResult SaveQuantities(int productId, List<ProductQuantityViewModel> quantities)
+        {
+            _productService.AddQuantity(productId, quantities);
+            _productService.Save();
+            return new OkObjectResult(quantities);
+        }
 
+        [HttpGet]
+        public IActionResult GetQuantities(int productId)
+        {
+            var quantities = _productService.GetQuantities(productId);
+            return new OkObjectResult(quantities);
+        }
         #endregion AJAX API
     }
 }
