@@ -22,11 +22,13 @@ namespace DAChuyenNganh.Application.Implementation
         ITagRepository _tagRepository;
         IProductTagRepository _productTagRepository;
         IProductQuantityRepository _productQuantityRepository;
+        IProductImageRepository _productImageRepository;
 
         IUnitOfWork _unitOfWork;
         public ProductService(IProductRepository productRepository,
             ITagRepository tagRepository,
             IProductQuantityRepository productQuantityRepository,
+            IProductImageRepository productImageRepository,
             IUnitOfWork unitOfWork,
             IProductTagRepository productTagRepository)
         {
@@ -34,6 +36,7 @@ namespace DAChuyenNganh.Application.Implementation
             _tagRepository = tagRepository;
             _productQuantityRepository = productQuantityRepository;
             _productTagRepository = productTagRepository;
+            _productImageRepository = productImageRepository;
             _unitOfWork = unitOfWork;
         }
 
@@ -72,6 +75,20 @@ namespace DAChuyenNganh.Application.Implementation
 
             }
             return productVm;
+        }
+
+        public void AddImages(int productId, string[] images)
+        {
+            _productImageRepository.RemoveMultiple(_productImageRepository.FindAll(x => x.ProductId == productId).ToList());
+            foreach (var image in images)
+            {
+                _productImageRepository.Add(new ProductImage()
+                {
+                    Path = image,
+                    ProductId = productId,
+                    Caption = string.Empty
+                });
+            }
         }
 
         public void AddQuantity(int productId, List<ProductQuantityViewModel> quantities)
@@ -132,6 +149,12 @@ namespace DAChuyenNganh.Application.Implementation
         public ProductViewModel GetById(int id)
         {
             return Mapper.Map<Product, ProductViewModel>(_productRepository.FindById(id));
+        }
+
+        public List<ProductImageViewModel> GetImages(int productId)
+        {
+            return _productImageRepository.FindAll(x => x.ProductId == productId)
+                            .ProjectTo<ProductImageViewModel>().ToList();
         }
 
         public List<ProductQuantityViewModel> GetQuantities(int productId)

@@ -26,5 +26,9 @@ namespace DAChuyenNganh.Application.Interfaces
 
         List<ProductQuantityViewModel> GetQuantities(int productId);
 
+        void AddImages(int productId, string[] images);
+
+        List<ProductImageViewModel> GetImages(int productId);
+
     }
 }
