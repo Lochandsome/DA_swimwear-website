@@ -66,11 +66,11 @@
                 data: data,
                 success: function (path) {
                     $('#txtImage').val(path);
-                    tedu.notify('Upload image succesful!', 'success');
+                    tedu.notify('Tải lên ảnh thành công!', 'success');
 
                 },
                 error: function () {
-                    tedu.notify('There was error uploading files!', 'error');
+                    tedu.notify('Có lỗi xảy ra trong quá trình tải lên ảnh!', 'error');
                 }
             });
         });
@@ -134,12 +134,12 @@
                         tedu.startLoading();
                     },
                     success: function (response) {
-                        tedu.notify('Delete successful', 'success');
+                        tedu.notify('Xóa sản phẩm thành công', 'success');
                         tedu.stopLoading();
                         loadData();
                     },
                     error: function (status) {
-                        tedu.notify('Has an error in delete progress', 'error');
+                        tedu.notify('Có lỗi xảy ra trong quá trình xóa', 'error');
                         tedu.stopLoading();
                     }
                 });
@@ -201,7 +201,7 @@
                         tedu.startLoading();
                     },
                     success: function (response) {
-                        tedu.notify('Update product successful', 'success');
+                        tedu.notify('Cập nhật sản phẩm thành công', 'success');
                         $('#modal-add-edit').modal('hide');
                         resetFormMaintainance();
 
@@ -209,7 +209,7 @@
                         loadData(true);
                     },
                     error: function () {
-                        tedu.notify('Has an error in save product progress', 'error');
+                        tedu.notify('Có lỗi xảy ra trong quá trình cập nhật', 'error');
                         tedu.stopLoading();
                     }
                 });
@@ -306,7 +306,7 @@
             },
             error: function (status) {
                 console.log(status);
-                tedu.notify('Cannot loading product category data', 'error');
+                tedu.notify('Không thể tải được dữ liệu loại sản phẩm', 'error');
             }
         });
     }
@@ -329,7 +329,7 @@
                     render += Mustache.render(template, {
                         Id: item.Id,
                         Name: item.Name,
-                        Image: item.Image == null ? '<img src="/admin-side/images/user.png" width=25' : '<img src="' + item.Image + '" width=25 />',
+                        Image: item.Image == null ? '<img src="/admin-side/images/user.png" width=100% height=70px' : '<img src="' + item.Image + '" width=100% height=70px />',
                         CategoryName: item.ProductCategory.Name,
                         Price: tedu.formatNumber(item.Price, 0),
                         CreatedDate: tedu.dateTimeFormatJson(item.DateCreated),
