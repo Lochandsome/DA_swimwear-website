@@ -16,7 +16,6 @@ using Microsoft.Extensions.Logging;
 namespace DAChuyenNganh.Controllers
 {
     [Authorize]
-    [Route("[controller]/[action]")]
     public class AccountController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
@@ -41,6 +40,7 @@ namespace DAChuyenNganh.Controllers
 
         [HttpGet]
         [AllowAnonymous]
+        [Route("login.html",Name = "Login")]
         public async Task<IActionResult> Login(string returnUrl = null)
         {
             // Clear the existing external cookie to ensure a clean login process
@@ -53,6 +53,7 @@ namespace DAChuyenNganh.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [Route("login.html", Name = "Login")]
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
@@ -205,6 +206,7 @@ namespace DAChuyenNganh.Controllers
 
         [HttpGet]
         [AllowAnonymous]
+        [Route("register.html")]
         public IActionResult Register(string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
@@ -214,6 +216,7 @@ namespace DAChuyenNganh.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [Route("register.html")]
         public async Task<IActionResult> Register(RegisterViewModel model, string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
