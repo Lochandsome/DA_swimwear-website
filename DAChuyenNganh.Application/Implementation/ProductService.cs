@@ -169,10 +169,25 @@ namespace DAChuyenNganh.Application.Implementation
             return Mapper.Map<Product, ProductViewModel>(_productRepository.FindById(id));
         }
 
+        public List<ProductViewModel> GetHotProduct(int top)
+        {
+            return _productRepository.FindAll(x => x.Status == Status.Active && x.HotFlag == true)
+                .OrderByDescending(x => x.DateCreated)
+                .Take(top)
+                .ProjectTo<ProductViewModel>()
+                .ToList();
+        }
+
         public List<ProductImageViewModel> GetImages(int productId)
         {
             return _productImageRepository.FindAll(x => x.ProductId == productId)
                             .ProjectTo<ProductImageViewModel>().ToList();
+        }
+
+        public List<ProductViewModel> GetLastest(int top)
+        {
+            return _productRepository.FindAll(x => x.Status == Status.Active).OrderByDescending(x => x.DateCreated)
+                .Take(top).ProjectTo<ProductViewModel>().ToList();
         }
 
         public List<ProductQuantityViewModel> GetQuantities(int productId)

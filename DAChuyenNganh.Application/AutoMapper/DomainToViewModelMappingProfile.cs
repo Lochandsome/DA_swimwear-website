@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using DAChuyenNganh.Application.ViewModels.Blog;
+using DAChuyenNganh.Application.ViewModels.Common;
 using DAChuyenNganh.Application.ViewModels.Product;
 using DAChuyenNganh.Application.ViewModels.System;
 using DAChuyenNganh.Data.Entities;
@@ -27,6 +29,12 @@ namespace DAChuyenNganh.Application.AutoMapper
             CreateMap<ProductQuantity, ProductQuantityViewModel>().MaxDepth(2);
             CreateMap<ProductImage, ProductImageViewModel>().MaxDepth(2);
             CreateMap<WholePrice, WholePriceViewModel>().MaxDepth(2);
+
+            CreateMap<Blog, BlogViewModel>().MaxDepth(2);
+            CreateMap<BlogTag, BlogTagViewModel>().MaxDepth(2);
+            CreateMap<Slide, SlideViewModel>().MaxDepth(2);
+            CreateMap<SystemConfig, SystemConfigViewModel>().MaxDepth(2);
+            CreateMap<Footer, FooterViewModel>().MaxDepth(2);
 
         }
     }
