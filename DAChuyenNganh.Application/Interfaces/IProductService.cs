@@ -1,4 +1,5 @@
-﻿using DAChuyenNganh.Application.ViewModels.Product;
+﻿using DAChuyenNganh.Application.ViewModels.Common;
+using DAChuyenNganh.Application.ViewModels.Product;
 using DAChuyenNganh.Utilities.Dtos;
 using System;
 using System.Collections.Generic;
@@ -37,5 +38,11 @@ namespace DAChuyenNganh.Application.Interfaces
         List<ProductViewModel> GetLastest(int top);
 
         List<ProductViewModel> GetHotProduct(int top);
+
+        List<ProductViewModel> GetRelatedProducts(int id, int top);
+
+        List<ProductViewModel> GetUpsellProducts(int top);
+
+        List<TagViewModel> GetProductTags(int productId);
     }
 }
