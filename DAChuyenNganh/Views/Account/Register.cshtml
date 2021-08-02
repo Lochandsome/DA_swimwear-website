@@ -40,7 +40,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <label>Email :</label>
+                                    <label>Email:</label>
                                     <div class="input-text">
                                         <input type="text" asp-for="Email" name="email" class="form-control">
                                     </div>
@@ -76,9 +76,15 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <label>Địa chỉ:</label>
+                                    <label>địa chỉ:</label>
                                     <div class="input-text">
                                         <input type="text" name="address" asp-for="Address" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6" style="padding:10px">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <recaptcha />
+                                        <span class="text-danger" id="recaptchaErrorMessage"></span>
                                     </div>
                                 </div>
                                 <div class="col-xs-12">
@@ -97,5 +103,9 @@
 <!-- Main Container End -->
 
 @section Scripts {
+
     @await Html.PartialAsync("_ValidationScriptsPartial")
+
+    <recaptcha-script validation-message-element-id="recaptchaErrorMessage" />
+
 }

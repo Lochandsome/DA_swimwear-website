@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
+using PaulMiami.AspNetCore.Mvc.Recaptcha;
 
 namespace DAChuyenNganh.Controllers
 {
@@ -65,7 +66,7 @@ namespace DAChuyenNganh.Controllers
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
-                    _logger.LogInformation("User logged in.");
+                    _logger.LogInformation("Khách hàng đã đăng nhập.");
                     return RedirectToLocal(returnUrl);
                 }
                 if (result.RequiresTwoFactor)
@@ -74,12 +75,12 @@ namespace DAChuyenNganh.Controllers
                 }
                 if (result.IsLockedOut)
                 {
-                    _logger.LogWarning("User account locked out.");
+                    _logger.LogWarning("Tài khoản người dùng đã bị khóa.");
                     return RedirectToAction(nameof(Lockout));
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, "Đăng nhập không hợp lệ.");
                     return View(model);
                 }
             }
@@ -217,6 +218,7 @@ namespace DAChuyenNganh.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [ValidateRecaptcha]
         [Route("register.html")]
         public async Task<IActionResult> Register(RegisterViewModel model, string returnUrl = null)
         {
@@ -239,14 +241,14 @@ namespace DAChuyenNganh.Controllers
             var result = await _userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
             {
-                _logger.LogInformation("User created a new account with password.");
+                _logger.LogInformation("Người dùng đã tọa 1 tài khoản mưới với mật khẩu.");
 
                 //var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                 //var callbackUrl = Url.EmailConfirmationLink(user.Id, code, Request.Scheme);
                 //await _emailSender.SendEmailConfirmationAsync(model.Email, callbackUrl);
 
                 await _signInManager.SignInAsync(user, isPersistent: false);
-                _logger.LogInformation("User created a new account with password.");
+                _logger.LogInformation("Người dùng đã tọa 1 tài khoản mưới với mật khẩu.");
                 return RedirectToLocal(returnUrl);
             }
             AddErrors(result);
@@ -260,7 +262,7 @@ namespace DAChuyenNganh.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            _logger.LogInformation("User logged out.");
+            _logger.LogInformation("Đã thoát.");
             return RedirectToAction(nameof(HomeController.Index), "Home");
         }
 
@@ -294,7 +296,7 @@ namespace DAChuyenNganh.Controllers
             var result = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: false, bypassTwoFactor: true);
             if (result.Succeeded)
             {
-                _logger.LogInformation("User logged in with {Name} provider.", info.LoginProvider);
+                _logger.LogInformation("Người dùng đã đăng nhập với {Name} nhà cung cấp.", info.LoginProvider);
                 return RedirectToLocal(returnUrl);
             }
             if (result.IsLockedOut)
