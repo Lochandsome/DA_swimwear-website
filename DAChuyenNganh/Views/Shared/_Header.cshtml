@@ -35,7 +35,7 @@
                     <!-- top links -->
                     <div class="headerlinkmenu col-md-8 col-sm-8 col-xs-12">
                         <span class="phone  hidden-xs hidden-sm">Call Us: +123.456.789</span>
-                        <ul class="links" style="padding-top:5px">
+                        <ul class="links">
                             <li class="hidden-xs"><a title="Help Center" href="#"><span>Help Center</span></a></li>
                             <li><a title="Store Locator" href="#"><span>Store Locator</span></a></li>
                             <li><a title="Checkout" href="checkout.html"><span>Checkout</span></a></li>
@@ -53,7 +53,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" >
+                                    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
                                         <a href="#" onclick="document.getElementById('logoutForm').submit()"><span>Thoát</span></a>
                                     </form>
                                 </li>
@@ -83,24 +83,10 @@
 
                         <div class="top-search">
                             <div id="search">
-                                <form>
+                                <form method="get" action="/search.html">
                                     <div class="input-group">
-                                        <select class="cate-dropdown hidden-xs hidden-sm" name="category_id">
-                                            <option>All Categories</option>
-                                            <option>women</option>
-                                            <option>&nbsp;&nbsp;&nbsp;Chair </option>
-                                            <option>&nbsp;&nbsp;&nbsp;Decoration</option>
-                                            <option>&nbsp;&nbsp;&nbsp;Lamp</option>
-                                            <option>&nbsp;&nbsp;&nbsp;Handbags </option>
-                                            <option>&nbsp;&nbsp;&nbsp;Sofas </option>
-                                            <option>&nbsp;&nbsp;&nbsp;Essential </option>
-                                            <option>Men</option>
-                                            <option>Electronics</option>
-                                            <option>&nbsp;&nbsp;&nbsp;Mobiles </option>
-                                            <option>&nbsp;&nbsp;&nbsp;Music &amp; Audio </option>
-                                        </select>
-                                        <input type="text" class="form-control" placeholder="Enter your search..." name="search">
-                                        <button class="btn-search" type="button"><i class="fa fa-search"></i></button>
+                                        <input type="text" class="form-control" placeholder="Enter your product name..." name="keyword">
+                                        <button class="btn-search" type="submit"><i class="fa fa-search"></i></button>
                                     </div>
                                 </form>
                             </div>

@@ -27,9 +27,9 @@ namespace DAChuyenNganh.Models.ProductViewModels
         // cái này để liệt kê ra cho dropdown pagesize
         public List<SelectListItem> PageSizes { get; } = new List<SelectListItem>
         {
-            new SelectListItem(){Value = "5",Text = "5"},
-            new SelectListItem(){Value = "10",Text = "10"},
-            new SelectListItem(){Value = "15",Text = "15"},
+            new SelectListItem(){Value = "8",Text = "8"},
+            new SelectListItem(){Value = "12",Text = "12"},
+            new SelectListItem(){Value = "24",Text = "24"},
         };
     }
 }
