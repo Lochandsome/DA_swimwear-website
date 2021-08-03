@@ -125,6 +125,14 @@ namespace DAChuyenNganh.Application.Implementation
             }
         }
 
+        public bool CheckAvailability(int productId, int size, int color)
+        {
+            var quantity = _productQuantityRepository.FindSingle(x => x.ColorId == color && x.SizeId == size && x.ProductId == productId);
+            if (quantity == null)
+                return false;
+            return quantity.Quantity > 0;
+        }
+
         public void Delete(int id)
         {
             _productRepository.Remove(id);
