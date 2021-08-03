@@ -13,11 +13,12 @@ namespace DAChuyenNganh.Controllers
     public class CartController : Controller
     {
         IProductService _productService;
-        public CartController(IProductService productService)
+        IBillService _billService;
+        public CartController(IProductService productService, IBillService billService)
         {
             _productService = productService;
+            _billService = billService;
         }
-
         [Route("cart.html", Name = "Cart")]
         public IActionResult Index()
         {
@@ -30,8 +31,11 @@ namespace DAChuyenNganh.Controllers
             return View();
         }
 
-        #region AJAX JQUERY REQUEST
-        // lấy ra cái danh mục của giỏ hàng
+        #region AJAX Request
+        /// <summary>
+        /// Get list item
+        /// </summary>
+        /// <returns></returns>
         public IActionResult GetCart()
         {
             var session = HttpContext.Session.Get<List<ShoppingCartViewModel>>(CommonConstants.CartSession);
@@ -40,35 +44,43 @@ namespace DAChuyenNganh.Controllers
             return new OkObjectResult(session);
         }
 
-        // dùng để xóa toàn bộ sản phẩm trong giỏ hàng
+        /// <summary>
+        /// Remove all products in cart
+        /// </summary>
+        /// <returns></returns>
         public IActionResult ClearCart()
         {
             HttpContext.Session.Remove(CommonConstants.CartSession);
             return new OkObjectResult("OK");
         }
 
-        // dùng để thêm mới 1 sản phẩm vào giỏ hàng
+        /// <summary>
+        /// Add product to cart
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult AddToCart(int productId, int quantity, int color, int size)
         {
-            // lấy ra chi tiết sản phẩm 
+            //Get product detail
             var product = _productService.GetById(productId);
 
-            // nhận các danh sách mặt hàng trong giỏ hangf 
+            //Get session with item list from cart
             var session = HttpContext.Session.Get<List<ShoppingCartViewModel>>(CommonConstants.CartSession);
             if (session != null)
-            { //kiểm tra sp có khác null k nếu 
-                // chuyển đổi chuỗi thành 1 đối tượng
+            {
+                //Convert string to list object
                 bool hasChanged = false;
 
-                // kiểm tra sản phẩm tồn tại trong giỏ hàng theo  id
+                //Check exist with item product id
                 if (session.Any(x => x.Product.Id == productId))
-                { // kiểm tra có sp nào chưa nếu có r thì tăng lên 1
+                {
                     foreach (var item in session)
                     {
-                        // cập nhật số lượng sản phẩm theo id
+                        //Update quantity for product if match product id
                         if (item.Product.Id == productId)
-                        {  //tăng lên 1, kt giá khuyến mãi nếu có giá km thì lấy theo giá đó
+                        {
                             item.Quantity += quantity;
                             item.Price = product.PromotionPrice ?? product.Price;
                             hasChanged = true;
@@ -81,14 +93,14 @@ namespace DAChuyenNganh.Controllers
                     {
                         Product = product,
                         Quantity = quantity,
-                        ColorId = color,
-                        SizeId = size,
+                        Color = _billService.GetColor(color),
+                        Size = _billService.GetSize(size),
                         Price = product.PromotionPrice ?? product.Price
                     });
                     hasChanged = true;
                 }
 
-                // cập nhật lại giỏ hàng
+                //Update back to cart
                 if (hasChanged)
                 {
                     HttpContext.Session.Set(CommonConstants.CartSession, session);
@@ -96,14 +108,14 @@ namespace DAChuyenNganh.Controllers
             }
             else
             {
-                // thêm giỏ hàng mới
+                //Add new cart
                 var cart = new List<ShoppingCartViewModel>();
                 cart.Add(new ShoppingCartViewModel()
                 {
                     Product = product,
                     Quantity = quantity,
-                    ColorId = color,
-                    SizeId = size,
+                    Color = _billService.GetColor(color),
+                    Size = _billService.GetSize(size),
                     Price = product.PromotionPrice ?? product.Price
                 });
                 HttpContext.Session.Set(CommonConstants.CartSession, cart);
@@ -111,7 +123,11 @@ namespace DAChuyenNganh.Controllers
             return new OkObjectResult(productId);
         }
 
-        // xóa 1 sản phẩm trong giỏ hàng
+        /// <summary>
+        /// Remove a product
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <returns></returns>
         public IActionResult RemoveFromCart(int productId)
         {
             var session = HttpContext.Session.Get<List<ShoppingCartViewModel>>(CommonConstants.CartSession);
@@ -136,8 +152,13 @@ namespace DAChuyenNganh.Controllers
             return new EmptyResult();
         }
 
-        // cập nhật sản phẩm trong giỏ hàng
-        public IActionResult UpdateCart(int productId, int quantity)
+        /// <summary>
+        /// Update product quantity
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
+        public IActionResult UpdateCart(int productId, int quantity, int color, int size)
         {
             var session = HttpContext.Session.Get<List<ShoppingCartViewModel>>(CommonConstants.CartSession);
             if (session != null)
@@ -149,6 +170,8 @@ namespace DAChuyenNganh.Controllers
                     {
                         var product = _productService.GetById(productId);
                         item.Product = product;
+                        item.Size = _billService.GetSize(size);
+                        item.Color = _billService.GetColor(color);
                         item.Quantity = quantity;
                         item.Price = product.PromotionPrice ?? product.Price;
                         hasChanged = true;
@@ -161,6 +184,20 @@ namespace DAChuyenNganh.Controllers
                 return new OkObjectResult(productId);
             }
             return new EmptyResult();
+        }
+
+        [HttpGet]
+        public IActionResult GetColors()
+        {
+            var colors = _billService.GetColors();
+            return new OkObjectResult(colors);
+        }
+
+        [HttpGet]
+        public IActionResult GetSizes()
+        {
+            var sizes = _billService.GetSizes();
+            return new OkObjectResult(sizes);
         }
         #endregion
     }
