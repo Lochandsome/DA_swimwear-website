@@ -100,7 +100,7 @@
                         loadData(true);
                     },
                     error: function () {
-                        tedu.notify('Has an error', 'error');
+                        tedu.notify('Có lỗi xảy ra', 'error');
                         tedu.stopLoading();
                     }
                 });
@@ -121,12 +121,12 @@
                         tedu.startLoading();
                     },
                     success: function (response) {
-                        tedu.notify('Delete successful', 'success');
+                        tedu.notify('Xóa thành công', 'success');
                         tedu.stopLoading();
                         loadData();
                     },
                     error: function (status) {
-                        tedu.notify('Has an error in deleting progress', 'error');
+                        tedu.notify('Có lỗi xảy ra trong quá trình xóa', 'error');
                         tedu.stopLoading();
                     }
                 });
@@ -156,12 +156,12 @@
                     tedu.startLoading();
                 },
                 success: function (response) {
-                    tedu.notify('Save permission successful', 'success');
+                    tedu.notify('Lưu quyền thành công', 'success');
                     $('#modal-grantpermission').modal('hide');
                     tedu.stopLoading();
                 },
                 error: function () {
-                    tedu.notify('Has an error in save permission progress', 'error');
+                    tedu.notify('Có lỗi xảy ra trong quá trình lưu quyền', 'error');
                     tedu.stopLoading();
                 }
             });

@@ -42,7 +42,7 @@
 
                 },
                 error: function () {
-                    tedu.notify('There was error uploading files!', 'error');
+                    tedu.notify('Tải lên thành công!', 'error');
                 }
             });
         });

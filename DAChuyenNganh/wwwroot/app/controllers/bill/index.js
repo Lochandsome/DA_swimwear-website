@@ -105,7 +105,7 @@
 
                 },
                 error: function (e) {
-                    tedu.notify('Has an error in progress', 'error');
+                    tedu.notify('Có lỗi xảy ra trong quá trình xử lý', 'error');
                     tedu.stopLoading();
                 }
             });
@@ -156,7 +156,7 @@
                         tedu.startLoading();
                     },
                     success: function (response) {
-                        tedu.notify('Save order successful', 'success');
+                        tedu.notify('Lưu hóa đơn thành công', 'success');
                         $('#modal-detail').modal('hide');
                         resetFormMaintainance();
 
@@ -164,7 +164,7 @@
                         loadData(true);
                     },
                     error: function () {
-                        tedu.notify('Has an error in progress', 'error');
+                        tedu.notify('Có lỗi xảy ra trong quá trình lưu', 'error');
                         tedu.stopLoading();
                     }
                 });
@@ -254,7 +254,7 @@
                 cachedObj.products = response;
             },
             error: function () {
-                tedu.notify('Has an error in progress', 'error');
+                tedu.notify('Có lỗi xảy ra trong quá trình xử lý', 'error');
             }
         });
     }
@@ -268,7 +268,7 @@
                 cachedObj.colors = response;
             },
             error: function () {
-                tedu.notify('Has an error in progress', 'error');
+                tedu.notify('Có lỗi xảy ra trong quá trình xử lý', 'error');
             }
         });
     }
@@ -282,7 +282,7 @@
                 cachedObj.sizes = response;
             },
             error: function () {
-                tedu.notify('Has an error in progress', 'error');
+                tedu.notify('Có lỗi xảy ra trong quá trình xử lý', 'error');
             }
         });
     }
