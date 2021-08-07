@@ -18,20 +18,23 @@
 <input type="hidden" id="hid-category-id" value="0" />
 <div class="">
     <div class="page-title">
-        <div class="title_left">
-            <h3>Users</h3>
-        </div>
-
-        <div class="title_right">
+        <div class="title_left" style="padding-top:10px;">
+            <div class="col-md-7 col-sm-7 col-xs-12 form-group pull-left">
+                <h3>Quản lý Tài khoản</h3>
+            </div>
             <div class="col-md-2 col-sm-2 col-xs-12 form-group pull-right top_search">
                 @{
                     var result = await AuthorizationService.AuthorizeAsync(User, "USER", Operations.Create);
                 }
                 @if (result.Succeeded)
                 {
-                    <button class="btn btn-success" id="btn-create" type="button">Create</button>
+                    <button class="btn btn-success" id="btn-create" type="button">Thêm tài khoản</button>
                 }
             </div>
+        </div>
+
+        <div class="title_right">
+            
             <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                 <div class="input-group">
                     <input type="text" id="txt-search-keyword" class="form-control" placeholder="Search...">
@@ -67,7 +70,7 @@
                     </table>
 
                     <div class="row">
-                        <div class="col-sm-5">
+                        <div class="col-sm-6" style="margin-top:20px;">
                             <div class="dataTables_info" id="datatable-checkbox_info" role="status" aria-live="polite">
                                 <select id="ddl-show-page">
                                     <option value="10" selected="selected">10</option>
@@ -76,11 +79,11 @@
                                     <option value="50">50</option>
                                 </select>
                                 <span class="item-per-page">
-                                    record/page.
+                                    Bản ghi/Trang.
                                 </span>
-                                Total record count: <strong id="lbl-total-records"></strong>
+                                Tổng số bản ghi: <strong id="lbl-total-records"></strong>
                             </div>
-                        </div><div class="col-sm-7">
+                        </div><div class="col-sm-6">
                             <div class="dataTables_paginate" id="datatable-checkbox_paginate">
                                 <ul id="paginationUL"></ul>
                             </div>
