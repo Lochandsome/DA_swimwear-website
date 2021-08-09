@@ -116,6 +116,7 @@ namespace DAChuyenNganh.Application.Implementation
 
                 //Update user detail
                 user.FullName = userVm.FullName;
+                user.Avatar = userVm.Avatar;
                 user.Status = userVm.Status;
                 user.Email = userVm.Email;
                 user.PhoneNumber = userVm.PhoneNumber;

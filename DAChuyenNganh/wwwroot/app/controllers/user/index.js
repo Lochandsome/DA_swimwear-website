@@ -27,6 +27,34 @@
             }
         });
 
+        $('#btnSelectImg').on('click', function () {
+            $('#fileInputImage').click();
+        });
+
+        $("#fileInputImage").on('change', function () {
+            var fileUpload = $(this).get(0);
+            var files = fileUpload.files;
+            var data = new FormData();
+            for (var i = 0; i < files.length; i++) {
+                data.append(files[i].name, files[i]);
+            }
+            $.ajax({
+                type: "POST",
+                url: "/Admin/Upload/UploadImage",
+                contentType: false,
+                processData: false,
+                data: data,
+                success: function (path) {
+                    $('#txtImage').val(path);
+                    tedu.notify('Tải lên ảnh thành công!', 'success');
+
+                },
+                error: function () {
+                    tedu.notify('Có lỗi xảy ra trong quá trình tải lên ảnh!', 'error');
+                }
+            });
+        });
+
         $('#txt-search-keyword').keypress(function (e) {
             if (e.which === 13) {
                 e.preventDefault();
@@ -64,7 +92,8 @@
                     var data = response;
                     $('#hidId').val(data.Id);
                     $('#txtFullName').val(data.FullName);
-                    $('#txtUserName').val(data.UserName);
+                    $('#txtImage').val(data.Avatar);
+                    $('#txtUserName').val(data.UserName);                    
                     $('#txtEmail').val(data.Email);
                     $('#txtPhoneNumber').val(data.PhoneNumber);
                     $('#ckStatus').prop('checked', data.Status === 1);
@@ -89,6 +118,7 @@
 
                 var id = $('#hidId').val();
                 var fullName = $('#txtFullName').val();
+                var avatar = $('#txtImage').val();
                 var userName = $('#txtUserName').val();
                 var password = $('#txtPassword').val();
                 var email = $('#txtEmail').val();
@@ -106,6 +136,7 @@
                     data: {
                         Id: id,
                         FullName: fullName,
+                        Avatar: avatar,
                         UserName: userName,
                         Password: password,
                         Email: email,
@@ -118,7 +149,7 @@
                         tedu.startLoading();
                     },
                     success: function () {
-                        tedu.notify('Save user succesful', 'success');
+                        tedu.notify('Lưu người dùng mới thành công', 'success');
                         $('#modal-add-edit').modal('hide');
                         resetFormMaintainance();
 
@@ -126,7 +157,7 @@
                         loadData(true);
                     },
                     error: function () {
-                        tedu.notify('Has an error', 'error');
+                        tedu.notify('đã có lỗi xảy ra', 'error');
                         tedu.stopLoading();
                     }
                 });
@@ -146,12 +177,12 @@
                         tedu.startLoading();
                     },
                     success: function () {
-                        tedu.notify('Delete successful', 'success');
+                        tedu.notify('Xóa người dùng thành công', 'success');
                         tedu.stopLoading();
                         loadData();
                     },
                     error: function () {
-                        tedu.notify('Has an error', 'error');
+                        tedu.notify('Đã có lỗi xảy ra', 'error');
                         tedu.stopLoading();
                     }
                 });
@@ -160,7 +191,7 @@
 
     };
 
-
+    // không cho xóa sửa mấy cái này
     function disableFieldEdit(disabled) {
         $('#txtUserName').prop('disabled', disabled);
         $('#txtPassword').prop('disabled', disabled);
@@ -172,6 +203,7 @@
         $('#hidId').val('');
         initRoleList();
         $('#txtFullName').val('');
+        $('#txtImage').val('');
         $('#txtUserName').val('');
         $('#txtPassword').val('');
         $('#txtConfirmPassword').val('');
