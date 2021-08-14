@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <ul>
-                    <li class="home"> <a title="Go to Home Page" href="/">Home</a><span>&raquo;</span></li>
+                    <li class="home"> <a title="Go to Home Page" href="/">Trang chủ</a><span>&raquo;</span></li>
                     <li><strong>@Model.Category.Name</strong></li>
                 </ul>
             </div>
@@ -32,12 +32,12 @@
                         <form action="/@Model.Category.SeoAlias-c.@(Model.Category.Id).html" method="get">
                             <div class="sorter">
                                 <div class="short-by">
-                                    <label>Sort By:</label>
+                                    <label>Sắp xếp theo:</label>
                                     <select name="sortBy" asp-for="SortType"
                                             onchange="this.form.submit()" asp-items="Model.SortTypes"></select>
                                 </div>
                                 <div class="short-by page">
-                                    <label>Show:</label>
+                                    <label>Hiển thị:</label>
                                     <select name="pageSize" asp-for="PageSize" onchange="this.form.submit()"
                                             asp-items="Model.PageSizes"></select>
                                 </div>
@@ -77,7 +77,7 @@
                                                             <div class="price-box"> <span class="regular-price"> <span class="price">@item.Price.ToString("N0")</span> </span> </div>
                                                         </div>
                                                         <div class="pro-action">
-                                                            <button type="button" class="add-to-cart"><span> Add to Cart</span> </button>
+                                                            <button type="button" class="add-to-cart"><span>Thêm vào giỏ hàng</span> </button>
                                                         </div>
                                                     </div>
                                                 </div>

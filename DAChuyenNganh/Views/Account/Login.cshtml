@@ -12,8 +12,8 @@
         <div class="row">
             <div class="col-xs-12">
                 <ul>
-                    <li class="home"> <a title="Go to Home Page" href="/">Home</a><span>&raquo;</span></li>
-                    <li><strong>My Account</strong></li>
+                    <li class="home"> <a title="Go to Home Page" href="/">Trang chủ</a><span>&raquo;</span></li>
+                    <li><strong>Tài khoản của tôi</strong></li>
                 </ul>
             </div>
         </div>
@@ -27,26 +27,26 @@
             <div class="account-login">
                 <div class="box-authentication">
                     <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
-                        <h4>Login</h4>
+                        <h4>Đăng nhập</h4>
                         <div asp-validation-summary="All" class="text-danger"></div>
-                        <p class="before-login-text">Welcome back! Sign in to your account</p>
-                        <label for="emmail_login">Email address<span class="required">*</span></label>
+                        <p class="before-login-text">Chào mừng trở lại! Đăng nhập với tài khoản của bạn</p>
+                        <label for="emmail_login">Địa chỉ Email<span class="required">*</span></label>
                         <input type="text" asp-for="Email" class="form-control">
-                        <label for="password_login">Password<span class="required">*</span></label>
+                        <label for="password_login">Mật khẩu<span class="required">*</span></label>
                         <input id="password_login" asp-for="Password" type="password" class="form-control">
-                        <p class="forgot-pass"><a asp-action="ForgotPassword">Lost your password?</a></p>
+                        <p class="forgot-pass"><a asp-action="ForgotPassword">Quên mật khẩu thì toang?</a></p>
                         <button type="submit" class="button">
-                            <i class="icon-lock icons"></i>&nbsp; <span>Login</span>
+                            <i class="icon-lock icons"></i>&nbsp; <span>Đăng nhập</span>
                         </button>
                         <label class="inline" asp-for="RememberMe">
 
                             <input asp-for="RememberMe" />
-                            Remember me
+                            Ghi nhớ đăng nhập
                         </label>
                     </form>
 
                     <section>
-                        <h4>Use another service to log in.</h4>
+                        <h4>Sử dụng dịch vụ khác để đăng nhập.</h4>
                         <hr />
                         @{
                             var loginProviders = (await SignInManager.GetExternalAuthenticationSchemesAsync()).ToList();
@@ -54,8 +54,8 @@
                             {
                                 <div>
                                     <p>
-                                        There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
-                                        for details on setting up this ASP.NET application to support logging in via external services.
+                                        Không có dịch vụ xác thực bên ngoài nào được định cấu hình. <a href="https://go.microsoft.com/fwlink/?LinkID=532715"></a>
+                                        Chưa phát triển đăng nhập với facebook hoặc google
                                     </p>
                                 </div>
                             }
@@ -76,16 +76,16 @@
                     </section>
                 </div>
                 <div class="box-authentication">
-                    <h4>Register</h4>
-                    <p>Create your very own account</p>
+                    <h4>Đăng ký</h4>
+                    <p>Tạo 1 tài khoản cho riêng bạn</p>
 
-                    <button onclick="window.location.href='/register.html'" class="button"><i class="icon-user icons"></i>&nbsp; <span>Register</span></button>
+                    <button onclick="window.location.href='/register.html'" class="button"><i class="icon-user icons"></i>&nbsp; <span>Đăng ký</span></button>
                     <div class="register-benefits">
-                        <h5>Sign up today and you will be able to :</h5>
+                        <h5>Đăng ký ngay ngày hôm nay để hưởng ưu đãi :</h5>
                         <ul>
-                            <li>Speed your way through checkout</li>
-                            <li>Track your orders easily</li>
-                            <li>Keep a record of all your purchases</li>
+                            <li>Tăng tốc trong quá trình thanh toán</li>
+                            <li>Kiểm tra hóa đơn dễ dàng</li>
+                            <li>Ghi lại tất cả các giao dịch mua</li>
                         </ul>
                     </div>
                 </div>

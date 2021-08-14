@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-sm-4 col-md-4 col-xs-12">
                         <!-- Default Welcome Message -->
-                        <div class="welcome-msg hidden-xs hidden-sm">Default welcome msg! </div>
+                        <div class="welcome-msg hidden-xs hidden-sm">Welccome to Website! </div>
                         <!-- Language &amp; Currency wrapper -->
                         <div class="language-currency-wrapper">
                             <div class="inner-cl">
@@ -34,11 +34,13 @@
 
                     <!-- top links -->
                     <div class="headerlinkmenu col-md-8 col-sm-8 col-xs-12" style="padding-top:4px">
-                        <span class="phone  hidden-xs hidden-sm">Call Us: +123.456.789</span>
+                        <span class="phone  hidden-xs hidden-sm">Đường dây nóng: +123.456.789</span>
                         <ul class="links">
                             <li class="hidden-xs"><a title="Help Center" href="#"><span>Help Center</span></a></li>
-                            <li><a title="Store Locator" href="#"><span>Store Locator</span></a></li>
+                            <!--
+                                <li><a title="Store Locator" href="#"><span>Store Locator</span></a></li>
                             <li><a title="Checkout" href="checkout.html"><span>Checkout</span></a></li>
+                            -->
                             @if (User.Identity.IsAuthenticated)
                             {
 
@@ -46,22 +48,22 @@
                                     <div class="dropdown">
                                         <a class="current-open" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><span>@User.GetSpecificClaim("FullName")</span> <i class="fa fa-angle-down"></i></a>
                                         <ul class="dropdown-menu" role="menu">
-                                            <li><a href="/account.html">Account</a></li>
-                                            <li><a href="/wishlist.html">Wishlist</a></li>
-                                            <li><a href="/orders-list.html">Order Tracking</a></li>
+                                            <li><a href="#">Tài khoản</a></li>
+                                            <li><a href="#">Wishlist</a></li>
+                                            <li><a href="/checkout.html">Thanh toán</a></li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li>
-                                    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" >
+                                    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm">
                                         <a href="#" onclick="document.getElementById('logoutForm').submit()"><span>Thoát</span></a>
                                     </form>
                                 </li>
                             }
                             else
                             {
-                                <li><a title="login" href="/login.html"><span>Login</span></a></li>
-                                <li><a title="register" href="/register.html"><span>Register</span></a></li>
+                                <li><a title="login" href="/login.html"><span>Đăng Nhập</span></a></li>
+                                <li><a title="register" href="/register.html"><span>Đăng ký</span></a></li>
                             }
                         </ul>
                     </div>

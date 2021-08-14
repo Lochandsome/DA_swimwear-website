@@ -39,7 +39,7 @@ namespace DAChuyenNganh.Controllers
             homeVm.HomeSlides = _commonService.GetSlides("top");
             return View(homeVm);
         }
-
+        [Route("about.html")]
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";

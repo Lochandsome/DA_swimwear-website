@@ -1160,7 +1160,7 @@ ul#cart-sidebar {
 	background: #333;
 	color: #999;
 	font-size: 12px;
-	padding: 8px 16px;
+	padding: 8px 8px;
 	border: none;
 	cursor: pointer;
 	display: inline-block;
@@ -1177,7 +1177,8 @@ ul#cart-sidebar {
 	background: #e83f33;
 	color: #fff;
 	font-size: 12px;
-	padding: 8px 16px;
+	width:120px;
+	padding: 8px 10px;
 	text-align: left;
 	cursor: pointer;
 	text-decoration: none;
@@ -1186,11 +1187,11 @@ ul#cart-sidebar {
 	font-weight: 500;
 	border: none;
 }
-.mini-cart .actions .view-cart i, .mini-cart .actions .btn-checkout i {
-	margin-right: 2px;
-	font-size: 16px;
-	vertical-align: 0px;
-}
+	.mini-cart .actions .view-cart i, .mini-cart .actions .btn-checkout i {		
+		margin-right: 2px;
+		font-size: 14px;
+		vertical-align: 0px;
+	}
 .mini-cart .actions .view-cart:hover {
 	color: #333;
 	background-color: #fcd21b;

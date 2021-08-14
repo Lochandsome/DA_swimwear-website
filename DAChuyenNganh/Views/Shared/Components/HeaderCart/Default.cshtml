@@ -9,7 +9,7 @@
                     <span class="cart-total">@Model.Count</span>
                 }
             </div>
-            <div class="shoppingcart-inner hidden-xs"><span class="cart-title">My Cart</span> </div>
+            <div class="shoppingcart-inner hidden-xs"><span class="cart-title">Giỏ hàng</span> </div>
         </a>
     </div>
     <div>
@@ -36,10 +36,10 @@
                         </li>
                     }
                 </ul>
-                <div class="top-subtotal">Subtotal: <span class="price">@Model.Sum(x => x.Quantity * x.Price).ToString("N0")</span></div>
-                <div class="actions">
-                    <button class="btn-checkout" type="button" onClick="location.href='/checkout.html'"><i class="fa fa-check"></i><span>Checkout</span></button>
-                    <button class="view-cart" type="button" onClick="location.href='/cart.html'"><i class="fa fa-shopping-cart"></i><span>View Cart</span></button>
+                <div class="top-subtotal">Tổng tiền: <span class="price">@Model.Sum(x => x.Quantity * x.Price).ToString("N0")</span></div>
+                <div class="actions" >
+                    <button class="btn-checkout" type="button" onClick="location.href='/checkout.html'"><i class="fa fa-check"></i><span>Thanh toán</span></button>
+                    <button class="view-cart" type="button" onClick="location.href='/cart.html'"><i class="fa fa-shopping-cart"></i><span>Xem giỏ hàng</span></button>
                 </div>
 
             }
