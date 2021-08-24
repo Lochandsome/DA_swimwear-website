@@ -37,15 +37,15 @@ namespace DAChuyenNganh.Data.EF.Migrations
                 oldClrType: typeof(string),
                 oldMaxLength: 128);
 
-            migrationBuilder.AlterColumn<string>(
-                name: "PageId",
-                table: "AdvertistmentPositions",
-                type: "nvarchar(450)",
-                maxLength: 20,
-                nullable: true,
-                oldClrType: typeof(string),
-                oldMaxLength: 20,
-                oldNullable: true);
+            //migrationBuilder.AlterColumn<string>(
+            //    name: "PageId",
+            //    table: "AdvertistmentPositions",
+            //    type: "nvarchar(450)",
+            //    maxLength: 20,
+            //    nullable: true,
+            //    oldClrType: typeof(string),
+            //    oldMaxLength: 20,
+            //    oldNullable: true);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Bills_AppUsers_CustomerId",
@@ -88,15 +88,15 @@ namespace DAChuyenNganh.Data.EF.Migrations
                 oldType: "nvarchar(450)",
                 oldMaxLength: 128);
 
-            migrationBuilder.AlterColumn<string>(
-                name: "PageId",
-                table: "AdvertistmentPositions",
-                maxLength: 20,
-                nullable: true,
-                oldClrType: typeof(string),
-                oldType: "nvarchar(450)",
-                oldMaxLength: 20,
-                oldNullable: true);
+            //migrationBuilder.AlterColumn<string>(
+            //    name: "PageId",
+            //    table: "AdvertistmentPositions",
+            //    maxLength: 20,
+            //    nullable: true,
+            //    oldClrType: typeof(string),
+            //    oldType: "nvarchar(450)",
+            //    oldMaxLength: 20,
+            //    oldNullable: true);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Bills_AppUsers_CustomerId",

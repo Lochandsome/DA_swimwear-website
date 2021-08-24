@@ -21,72 +21,72 @@ namespace DAChuyenNganh.Data.EF.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("DAChuyenNganh.Data.Entities.Advertistment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+            //modelBuilder.Entity("DAChuyenNganh.Data.Entities.Advertistment", b =>
+            //    {
+            //        b.Property<int>("Id")
+            //            .ValueGeneratedOnAdd()
+            //            .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("DateCreated");
+            //        b.Property<DateTime>("DateCreated");
 
-                    b.Property<DateTime>("DateModified");
+            //        b.Property<DateTime>("DateModified");
 
-                    b.Property<string>("Description")
-                        .HasMaxLength(250);
+            //        b.Property<string>("Description")
+            //            .HasMaxLength(250);
 
-                    b.Property<string>("Image")
-                        .HasMaxLength(250);
+            //        b.Property<string>("Image")
+            //            .HasMaxLength(250);
 
-                    b.Property<string>("Name")
-                        .HasMaxLength(250);
+            //        b.Property<string>("Name")
+            //            .HasMaxLength(250);
 
-                    b.Property<string>("PositionId")
-                        .HasMaxLength(20);
+            //        b.Property<string>("PositionId")
+            //            .HasMaxLength(20);
 
-                    b.Property<int>("SortOrder");
+            //        b.Property<int>("SortOrder");
 
-                    b.Property<int>("Status");
+            //        b.Property<int>("Status");
 
-                    b.Property<string>("Url")
-                        .HasMaxLength(250);
+            //        b.Property<string>("Url")
+            //            .HasMaxLength(250);
 
-                    b.HasKey("Id");
+            //        b.HasKey("Id");
 
-                    b.HasIndex("PositionId");
+            //        b.HasIndex("PositionId");
 
-                    b.ToTable("Advertistments");
-                });
+            //        b.ToTable("Advertistments");
+            //    });
 
-            modelBuilder.Entity("DAChuyenNganh.Data.Entities.AdvertistmentPage", b =>
-                {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
+            //modelBuilder.Entity("DAChuyenNganh.Data.Entities.AdvertistmentPage", b =>
+            //    {
+            //        b.Property<string>("Id")
+            //            .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name");
+            //        b.Property<string>("Name");
 
-                    b.HasKey("Id");
+            //        b.HasKey("Id");
 
-                    b.ToTable("AdvertistmentPages");
-                });
+            //        //b.ToTable("AdvertistmentPages");
+            //    });
 
-            modelBuilder.Entity("DAChuyenNganh.Data.Entities.AdvertistmentPosition", b =>
-                {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasMaxLength(20);
+            //modelBuilder.Entity("DAChuyenNganh.Data.Entities.AdvertistmentPosition", b =>
+            //    {
+            //        b.Property<string>("Id")
+            //            .ValueGeneratedOnAdd()
+            //            .HasMaxLength(20);
 
-                    b.Property<string>("Name")
-                        .HasMaxLength(250);
+            //        b.Property<string>("Name")
+            //            .HasMaxLength(250);
 
-                    b.Property<string>("PageId")
-                        .HasMaxLength(20);
+            //        b.Property<string>("PageId")
+            //            .HasMaxLength(20);
 
-                    b.HasKey("Id");
+            //        b.HasKey("Id");
 
-                    b.HasIndex("PageId");
+            //        b.HasIndex("PageId");
 
-                    b.ToTable("AdvertistmentPositions");
-                });
+            //        b.ToTable("AdvertistmentPositions");
+            //    });
 
             modelBuilder.Entity("DAChuyenNganh.Data.Entities.Announcement", b =>
                 {
@@ -402,32 +402,32 @@ namespace DAChuyenNganh.Data.EF.Migrations
                     b.ToTable("ContactDetails");
                 });
 
-            modelBuilder.Entity("DAChuyenNganh.Data.Entities.Feedback", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+            //modelBuilder.Entity("DAChuyenNganh.Data.Entities.Feedback", b =>
+            //    {
+            //        b.Property<int>("Id")
+            //            .ValueGeneratedOnAdd()
+            //            .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("DateCreated");
+            //        b.Property<DateTime>("DateCreated");
 
-                    b.Property<DateTime>("DateModified");
+            //        b.Property<DateTime>("DateModified");
 
-                    b.Property<string>("Email")
-                        .HasMaxLength(250);
+            //        b.Property<string>("Email")
+            //            .HasMaxLength(250);
 
-                    b.Property<string>("Message")
-                        .HasMaxLength(500);
+            //        b.Property<string>("Message")
+            //            .HasMaxLength(500);
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(250);
+            //        b.Property<string>("Name")
+            //            .IsRequired()
+            //            .HasMaxLength(250);
 
-                    b.Property<int>("Status");
+            //        b.Property<int>("Status");
 
-                    b.HasKey("Id");
+            //        b.HasKey("Id");
 
-                    b.ToTable("Feedbacks");
-                });
+            //        b.ToTable("Feedbacks");
+            //    });
 
             modelBuilder.Entity("DAChuyenNganh.Data.Entities.Footer", b =>
                 {
@@ -471,49 +471,49 @@ namespace DAChuyenNganh.Data.EF.Migrations
                     b.ToTable("Functions");
                 });
 
-            modelBuilder.Entity("DAChuyenNganh.Data.Entities.Language", b =>
-                {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
+            //modelBuilder.Entity("DAChuyenNganh.Data.Entities.Language", b =>
+            //    {
+            //        b.Property<string>("Id")
+            //            .ValueGeneratedOnAdd();
 
-                    b.Property<bool>("IsDefault");
+            //        b.Property<bool>("IsDefault");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(128);
+            //        b.Property<string>("Name")
+            //            .IsRequired()
+            //            .HasMaxLength(128);
 
-                    b.Property<string>("Resources");
+            //        b.Property<string>("Resources");
 
-                    b.Property<int>("Status");
+            //        b.Property<int>("Status");
 
-                    b.HasKey("Id");
+            //        b.HasKey("Id");
 
-                    b.ToTable("Languages");
-                });
+            //        b.ToTable("Languages");
+            //    });
 
-            modelBuilder.Entity("DAChuyenNganh.Data.Entities.Page", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasMaxLength(255)
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+            //modelBuilder.Entity("DAChuyenNganh.Data.Entities.Page", b =>
+            //    {
+            //        b.Property<int>("Id")
+            //            .ValueGeneratedOnAdd()
+            //            .HasMaxLength(255)
+            //            .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Alias")
-                        .IsRequired()
-                        .HasMaxLength(256);
+            //        b.Property<string>("Alias")
+            //            .IsRequired()
+            //            .HasMaxLength(256);
 
-                    b.Property<string>("Content");
+            //        b.Property<string>("Content");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(256);
+            //        b.Property<string>("Name")
+            //            .IsRequired()
+            //            .HasMaxLength(256);
 
-                    b.Property<int>("Status");
+            //        b.Property<int>("Status");
 
-                    b.HasKey("Id");
+            //        b.HasKey("Id");
 
-                    b.ToTable("Pages");
-                });
+            //        b.ToTable("Pages");
+            //    });
 
             modelBuilder.Entity("DAChuyenNganh.Data.Entities.Permission", b =>
                 {
@@ -909,19 +909,19 @@ namespace DAChuyenNganh.Data.EF.Migrations
                     b.ToTable("AppUserTokens");
                 });
 
-            modelBuilder.Entity("DAChuyenNganh.Data.Entities.Advertistment", b =>
-                {
-                    b.HasOne("DAChuyenNganh.Data.Entities.AdvertistmentPosition", "AdvertistmentPosition")
-                        .WithMany("Advertistments")
-                        .HasForeignKey("PositionId");
-                });
+            //modelBuilder.Entity("DAChuyenNganh.Data.Entities.Advertistment", b =>
+            //    {
+            //        b.HasOne("DAChuyenNganh.Data.Entities.AdvertistmentPosition", "AdvertistmentPosition")
+            //            .WithMany("Advertistments")
+            //            .HasForeignKey("PositionId");
+            //    });
 
-            modelBuilder.Entity("DAChuyenNganh.Data.Entities.AdvertistmentPosition", b =>
-                {
-                    b.HasOne("DAChuyenNganh.Data.Entities.AdvertistmentPage", "AdvertistmentPage")
-                        .WithMany("AdvertistmentPositions")
-                        .HasForeignKey("PageId");
-                });
+            //modelBuilder.Entity("DAChuyenNganh.Data.Entities.AdvertistmentPosition", b =>
+            //    {
+            //        b.HasOne("DAChuyenNganh.Data.Entities.AdvertistmentPage", "AdvertistmentPage")
+            //            .WithMany("AdvertistmentPositions")
+            //            .HasForeignKey("PageId");
+            //    });
 
             modelBuilder.Entity("DAChuyenNganh.Data.Entities.Announcement", b =>
                 {

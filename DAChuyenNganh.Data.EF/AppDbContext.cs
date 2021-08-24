@@ -23,7 +23,7 @@ namespace DAChuyenNganh.Data.EF
         {
         }
 
-        public DbSet<Language> Languages { set; get; }
+        //public DbSet<Language> Languages { set; get; }
         public DbSet<SystemConfig> SystemConfigs { get; set; }
         public DbSet<Function> Functions { get; set; }
 
@@ -38,9 +38,9 @@ namespace DAChuyenNganh.Data.EF
         public DbSet<BlogTag> BlogTags { set; get; }
         public DbSet<Color> Colors { set; get; }
         public DbSet<Contact> Contacts { set; get; }
-        public DbSet<Feedback> Feedbacks { set; get; }
+        //public DbSet<Feedback> Feedbacks { set; get; }
         public DbSet<Footer> Footers { set; get; }
-        public DbSet<Page> Pages { set; get; }
+        //public DbSet<Page> Pages { set; get; }
         public DbSet<Product> Products { set; get; }
         public DbSet<ProductCategory> ProductCategories { set; get; }
         public DbSet<ProductImage> ProductImages { set; get; }
@@ -55,9 +55,9 @@ namespace DAChuyenNganh.Data.EF
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<WholePrice> WholePrices { get; set; }
 
-        public DbSet<AdvertistmentPage> AdvertistmentPages { get; set; }
-        public DbSet<Advertistment> Advertistments { get; set; }
-        public DbSet<AdvertistmentPosition> AdvertistmentPositions { get; set; }
+        //public DbSet<AdvertistmentPage> AdvertistmentPages { get; set; }
+        //public DbSet<Advertistment> Advertistments { get; set; }
+        //public DbSet<AdvertistmentPosition> AdvertistmentPositions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -82,11 +82,11 @@ namespace DAChuyenNganh.Data.EF
             builder.AddConfiguration(new BlogTagConfiguration());
             builder.AddConfiguration(new ContactDetailConfiguration());
             builder.AddConfiguration(new FooterConfiguration());
-            builder.AddConfiguration(new PageConfiguration());
+            //builder.AddConfiguration(new PageConfiguration());
             //builder.AddConfiguration(new FooterConfiguration());
             builder.AddConfiguration(new ProductTagConfiguration());
             builder.AddConfiguration(new SystemConfigConfiguration());
-            builder.AddConfiguration(new AdvertistmentPositionConfiguration());            
+            //builder.AddConfiguration(new AdvertistmentPositionConfiguration());            
 
             //base.OnModelCreating(builder);
         }

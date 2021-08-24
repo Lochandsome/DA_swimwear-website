@@ -8,17 +8,17 @@ namespace DAChuyenNganh.Data.EF.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "AdvertistmentPages",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AdvertistmentPages", x => x.Id);
-                });
+            //migrationBuilder.CreateTable(
+            //    name: "AdvertistmentPages",
+            //    columns: table => new
+            //    {
+            //        Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+            //        Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+            //    },
+            //    constraints: table =>
+            //    {
+            //        table.PrimaryKey("PK_AdvertistmentPages", x => x.Id);
+            //    });
 
             migrationBuilder.CreateTable(
                 name: "AppRoleClaims",
@@ -198,23 +198,23 @@ namespace DAChuyenNganh.Data.EF.Migrations
                     table.PrimaryKey("PK_ContactDetails", x => x.Id);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Feedbacks",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DateModified = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
-                    Message = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
-                    Name = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
-                    Status = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Feedbacks", x => x.Id);
-                });
+            //migrationBuilder.CreateTable(
+            //    name: "Feedbacks",
+            //    columns: table => new
+            //    {
+            //        Id = table.Column<int>(type: "int", nullable: false)
+            //            .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+            //        DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
+            //        DateModified = table.Column<DateTime>(type: "datetime2", nullable: false),
+            //        Email = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+            //        Message = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+            //        Name = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
+            //        Status = table.Column<int>(type: "int", nullable: false)
+            //    },
+            //    constraints: table =>
+            //    {
+            //        table.PrimaryKey("PK_Feedbacks", x => x.Id);
+            //    });
 
             migrationBuilder.CreateTable(
                 name: "Footers",
@@ -245,36 +245,36 @@ namespace DAChuyenNganh.Data.EF.Migrations
                     table.PrimaryKey("PK_Functions", x => x.Id);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Languages",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    IsDefault = table.Column<bool>(type: "bit", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    Resources = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Status = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Languages", x => x.Id);
-                });
+            //migrationBuilder.CreateTable(
+            //    name: "Languages",
+            //    columns: table => new
+            //    {
+            //        Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+            //        IsDefault = table.Column<bool>(type: "bit", nullable: false),
+            //        Name = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+            //        Resources = table.Column<string>(type: "nvarchar(max)", nullable: true),
+            //        Status = table.Column<int>(type: "int", nullable: false)
+            //    },
+            //    constraints: table =>
+            //    {
+            //        table.PrimaryKey("PK_Languages", x => x.Id);
+            //    });
 
-            migrationBuilder.CreateTable(
-                name: "Pages",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", maxLength: 255, nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Alias = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: false),
-                    Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Name = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: false),
-                    Status = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Pages", x => x.Id);
-                });
+            //migrationBuilder.CreateTable(
+            //    name: "Pages",
+            //    columns: table => new
+            //    {
+            //        Id = table.Column<int>(type: "int", maxLength: 255, nullable: false)
+            //            .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+            //        Alias = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: false),
+            //        Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
+            //        Name = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: false),
+            //        Status = table.Column<int>(type: "int", nullable: false)
+            //    },
+            //    constraints: table =>
+            //    {
+            //        table.PrimaryKey("PK_Pages", x => x.Id);
+            //    });
 
             migrationBuilder.CreateTable(
                 name: "ProductCategories",
@@ -366,24 +366,24 @@ namespace DAChuyenNganh.Data.EF.Migrations
                     table.PrimaryKey("PK_Tags", x => x.Id);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "AdvertistmentPositions",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
-                    PageId = table.Column<string>(type: "nvarchar(450)", maxLength: 20, nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AdvertistmentPositions", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_AdvertistmentPositions_AdvertistmentPages_PageId",
-                        column: x => x.PageId,
-                        principalTable: "AdvertistmentPages",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
+            //migrationBuilder.CreateTable(
+            //    name: "AdvertistmentPositions",
+            //    columns: table => new
+            //    {
+            //        Id = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+            //        Name = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+            //        PageId = table.Column<string>(type: "nvarchar(450)", maxLength: 20, nullable: true)
+            //    },
+            //    constraints: table =>
+            //    {
+            //        table.PrimaryKey("PK_AdvertistmentPositions", x => x.Id);
+            //        table.ForeignKey(
+            //            name: "FK_AdvertistmentPositions_AdvertistmentPages_PageId",
+            //            column: x => x.PageId,
+            //            principalTable: "AdvertistmentPages",
+            //            principalColumn: "Id",
+            //            onDelete: ReferentialAction.Restrict);
+            //    });
 
             migrationBuilder.CreateTable(
                 name: "Announcements",
@@ -530,32 +530,32 @@ namespace DAChuyenNganh.Data.EF.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Advertistments",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DateModified = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
-                    Image = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
-                    Name = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
-                    PositionId = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
-                    SortOrder = table.Column<int>(type: "int", nullable: false),
-                    Status = table.Column<int>(type: "int", nullable: false),
-                    Url = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Advertistments", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Advertistments_AdvertistmentPositions_PositionId",
-                        column: x => x.PositionId,
-                        principalTable: "AdvertistmentPositions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
+            //migrationBuilder.CreateTable(
+            //    name: "Advertistments",
+            //    columns: table => new
+            //    {
+            //        Id = table.Column<int>(type: "int", nullable: false)
+            //            .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+            //        DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
+            //        DateModified = table.Column<DateTime>(type: "datetime2", nullable: false),
+            //        Description = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+            //        Image = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+            //        Name = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+            //        PositionId = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+            //        SortOrder = table.Column<int>(type: "int", nullable: false),
+            //        Status = table.Column<int>(type: "int", nullable: false),
+            //        Url = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true)
+            //    },
+            //    constraints: table =>
+            //    {
+            //        table.PrimaryKey("PK_Advertistments", x => x.Id);
+            //        table.ForeignKey(
+            //            name: "FK_Advertistments_AdvertistmentPositions_PositionId",
+            //            column: x => x.PositionId,
+            //            principalTable: "AdvertistmentPositions",
+            //            principalColumn: "Id",
+            //            onDelete: ReferentialAction.Restrict);
+            //    });
 
             migrationBuilder.CreateTable(
                 name: "AnnouncementUsers",
@@ -723,15 +723,15 @@ namespace DAChuyenNganh.Data.EF.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateIndex(
-                name: "IX_AdvertistmentPositions_PageId",
-                table: "AdvertistmentPositions",
-                column: "PageId");
+            //migrationBuilder.CreateIndex(
+            //    name: "IX_AdvertistmentPositions_PageId",
+            //    table: "AdvertistmentPositions",
+            //    column: "PageId");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Advertistments_PositionId",
-                table: "Advertistments",
-                column: "PositionId");
+            //migrationBuilder.CreateIndex(
+            //    name: "IX_Advertistments_PositionId",
+            //    table: "Advertistments",
+            //    column: "PositionId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Announcements_UserId",
@@ -831,8 +831,8 @@ namespace DAChuyenNganh.Data.EF.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Advertistments");
+            //migrationBuilder.DropTable(
+            //    name: "Advertistments");
 
             migrationBuilder.DropTable(
                 name: "AnnouncementUsers");
@@ -861,17 +861,17 @@ namespace DAChuyenNganh.Data.EF.Migrations
             migrationBuilder.DropTable(
                 name: "ContactDetails");
 
-            migrationBuilder.DropTable(
-                name: "Feedbacks");
+            //migrationBuilder.DropTable(
+            //    name: "Feedbacks");
 
             migrationBuilder.DropTable(
                 name: "Footers");
 
-            migrationBuilder.DropTable(
-                name: "Languages");
+            //migrationBuilder.DropTable(
+            //    name: "Languages");
 
-            migrationBuilder.DropTable(
-                name: "Pages");
+            //migrationBuilder.DropTable(
+            //    name: "Pages");
 
             migrationBuilder.DropTable(
                 name: "Permissions");
@@ -894,8 +894,8 @@ namespace DAChuyenNganh.Data.EF.Migrations
             migrationBuilder.DropTable(
                 name: "WholePrices");
 
-            migrationBuilder.DropTable(
-                name: "AdvertistmentPositions");
+            //migrationBuilder.DropTable(
+            //    name: "AdvertistmentPositions");
 
             migrationBuilder.DropTable(
                 name: "Announcements");
@@ -924,8 +924,8 @@ namespace DAChuyenNganh.Data.EF.Migrations
             migrationBuilder.DropTable(
                 name: "Products");
 
-            migrationBuilder.DropTable(
-                name: "AdvertistmentPages");
+            //migrationBuilder.DropTable(
+            //    name: "AdvertistmentPages");
 
             migrationBuilder.DropTable(
                 name: "AppUsers");
