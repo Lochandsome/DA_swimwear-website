@@ -7,6 +7,7 @@ using DAChuyenNganh.Services;
 using DAChuyenNganh.Utilities.Constants;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using PaulMiami.AspNetCore.Mvc.Recaptcha;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,7 +58,8 @@ namespace DAChuyenNganh.Controllers
             return View(model);
         }
         [Route("checkout.html", Name = "Checkout")]
-        [ValidateAntiForgeryToken]
+        [ValidateRecaptcha]
+        [ValidateAntiForgeryToken]        
         [HttpPost]
         public async Task<IActionResult> Checkout(CheckoutViewModel model)
         {

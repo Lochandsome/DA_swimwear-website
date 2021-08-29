@@ -3592,12 +3592,13 @@ footer {
     overflow: hidden;
     color: #999;
     background: #333;
-    font-size: 13px;
+    font-size: 18px;
     padding-top: 35px;
 }
 
+
     footer p {
-        color: #999;
+        color: #fff;
         line-height: 20px;
     }
 
@@ -3619,7 +3620,7 @@ footer {
         footer .footer-links ul li {
             list-style-type: none;
             padding: 5px 0;
-            font-size: 12px;
+            font-size: 14px;
         }
 
             footer .footer-links ul li a {
@@ -3641,6 +3642,43 @@ footer {
     .footer-logo p {
         display: block;
     }
+
+.footer-area {
+    background-position: top center;
+    position: relative;
+    z-index: 5;
+}
+
+    .footer-area::before {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-image: url(../images/footer-bg.svg);
+        background-position: top center;
+        z-index: -1;
+        background-size: cover;
+    }
+
+@media only screen and (min-width: 1921px) {
+    .footer-area::before {
+        height: 1120px;
+    }
+}
+
+.footer-widget {
+    padding-top: 120px;
+}
+
+
+
+.footer-copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
 
 .email .fa-envelope:before {
     font-size: 12px;
@@ -9589,3 +9627,4 @@ a.jtv-m-logo-img {
 .manufacturers-box {
     margin-top: 15px;
 }
+

@@ -30,10 +30,10 @@
                         <h4>Đăng nhập</h4>
                         <div asp-validation-summary="All" class="text-danger"></div>
                         <p class="before-login-text">Chào mừng trở lại! Đăng nhập với tài khoản của bạn</p>
-                        <label for="emmail_login">Địa chỉ Email<span class="required">*</span></label>
-                        <input type="text" asp-for="Email" class="form-control">
-                        <label for="password_login">Mật khẩu<span class="required">*</span></label>
-                        <input id="password_login" asp-for="Password" type="password" class="form-control">
+                        <label for="emmail_login" style="font-size:14px">Địa chỉ Email<span class="required">*</span></label>
+                        <input type="text" asp-for="Email" class="form-control" style="font-size: 14px;">
+                        <label for="password_login" style="font-size:14px">Mật khẩu<span class="required">*</span></label>
+                        <input id="password_login" asp-for="Password" type="password" class="form-control" style="font-size: 14px;">
                         <p class="forgot-pass"><a asp-action="ForgotPassword">Quên mật khẩu thì toang?</a></p>
                         <button type="submit" class="button">
                             <i class="icon-lock icons"></i>&nbsp; <span>Đăng nhập</span>

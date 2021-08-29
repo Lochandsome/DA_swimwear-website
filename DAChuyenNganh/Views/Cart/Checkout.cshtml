@@ -3,9 +3,11 @@
     ViewData["Title"] = "Checkout";
 }
 @section Scripts {
-    <recaptcha-script validation-message-element-id="recaptchaErrorMessage" />
 
     @await Html.PartialAsync("_ValidationScriptsPartial")
+
+    <recaptcha-script validation-message-element-id="recaptchaErrorMessage" />
+
 }
 <!-- Breadcrumbs -->
 
@@ -77,17 +79,17 @@
                             </div>
 
                             <h4 class="checkout-sep">2. Thông tin vận chuyển</h4>
-                            <div class="box-border">
-                                <ul>
+                            <div class="box-border" >
+                                <ul >
                                     <li class="row">
                                         <div class="col-sm-6">
-                                            <label class="required">Tên đầy đủ</label>
-                                            <input class="input form-control" type="text" asp-for="CustomerName">
+                                            <label class="required" style="font-size: 14px;">Tên đầy đủ</label>
+                                            <input class="input form-control" type="text" asp-for="CustomerName" style="font-size: 14px;">
                                         </div>
                                         <!--/ [col] -->
                                         <div class="col-sm-6">
-                                            <label class="required">Điện thoại người nhận</label>
-                                            <input class="input form-control" type="text" asp-for="CustomerMobile">
+                                            <label class="required" style="font-size: 14px;">Điện thoại người nhận</label>
+                                            <input class="input form-control" type="text" asp-for="CustomerMobile" style="font-size: 14px;">
                                         </div>
                                     </li>
                                     <!--/ .row -->
@@ -95,8 +97,8 @@
 
                                     <li class="row">
                                         <div class="col-xs-12">
-                                            <label class="required">Địa chir nhận hàng</label>
-                                            <input class="input form-control" type="text" asp-for="CustomerAddress">
+                                            <label class="required" style="font-size: 14px;">Địa chir nhận hàng</label>
+                                            <input class="input form-control" type="text" asp-for="CustomerAddress" style="font-size: 14px;">
                                         </div>
                                         <!--/ [col] -->
 
@@ -106,8 +108,8 @@
 
                                     <li class="row">
                                         <div class="col-sm-12">
-                                            <label class="required">Cần nói gì thì ghi vô</label>
-                                            <input class="input form-control" type="text" asp-for="CustomerMessage">
+                                            <label class="required" style="font-size: 14px;">Cần nói gì thì ghi vô</label>
+                                            <input class="input form-control" type="text" asp-for="CustomerMessage" style="font-size: 14px;">
                                         </div>
                                         <!--/ [col] -->
 
@@ -138,11 +140,11 @@
                                     <table class="table table-bordered cart_summary">
                                         <thead>
                                             <tr>
-                                                <th class="cart_product">Sản phẩm</th>
-                                                <th>Mô tả</th>
-                                                <th>Giá bán</th>
-                                                <th>Số lượng</th>
-                                                <th>thành tiền</th>
+                                                <th width="20%" style="padding-left:20px" class="cart_product">Sản phẩm</th>
+                                                <th width="20%">Mô tả</th>
+                                                <th width="20%" style="padding-left:80px">Giá bán</th>
+                                                <th width="10%">Số lượng</th>
+                                                <th width="30%" style="padding-left:120px">Thành tiền</th>                                                
                                             </tr>
                                         </thead>
                                         <tbody>
