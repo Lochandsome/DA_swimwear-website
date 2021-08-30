@@ -90,9 +90,24 @@
             <td>{{Name}}</td>
             <td>{{Description}}</td>
             <td>
-                <a href="#" data-id="{{Id}}" class="btn  btn-xs btn-primary btn-grant"><i class="fa fa-eye-slash"></i></a>
-                <a href="#" data-id="{{Id}}" class="btn  btn-xs btn-info btn-edit"><i class="fa fa-pencil-square-o"></i></a>
-                <a href="#" data-id="{{Id}}" class="btn btn-xs  btn-danger btn-delete"><i class="fa fa-trash-o"></i></a>
+                    <div class="dropdown">
+                        <button class="btn btn-warning dropdown-toggle btn-sm btn-grant" type="button"id="dropdownMenu9" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-id="{{Id}}"><i class="fa fa-eye-slash"></i></button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu9">
+                            <p>Phần quyền chức năng</p>
+                            </div>
+                    </div>
+                    <div class="dropdown" style="padding-right:20px">
+                        <button class="btn btn-info dropdown-toggle btn-sm btn-edit" type="button"id="dropdownMenu10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-id="{{Id}}"><i class="fa fa-pencil-square-o"></i></button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu10">
+                            <p>Sửa quyền hạn</p>
+                            </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-danger dropdown-toggle btn-sm btn-delete" type="button"id="dropdownMenu11" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-id="{{Id}}"><i class="fa fa-trash-o"></i></button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu11">
+                            <p>Xóa lớp quyền</p>
+                            </div>
+                    </div>
             </td>
         </tr>
     </script>

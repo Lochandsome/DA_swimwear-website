@@ -88,7 +88,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div >
 </div>
 <script id="table-template" type="x-tmpl-mustache">
     <tr>
@@ -100,11 +100,36 @@
         <td>{{CreatedDate}}</td>
         <td>{{{Status}}}</td>
         <th scope="row">
-            <button class="btn btn-default btn-sm btn-edit" data-id="{{Id}}"><i class="fa fa-pencil"></i></button>
-            <button class="btn btn-danger btn-sm btn-delete" data-id="{{Id}}"><i class="fa fa-trash"></i></button>
-            <a href="#" data-id="{{Id}}" class="btn btn-xs btn-images"><i class="fa fa-image"></i></a>
-            <a href="#" data-id="{{Id}}" class="btn btn-xs btn-quantity"><i class="fa fa-hourglass-start"></i></a>
-            <a href="#" data-id="{{Id}}" class="btn btn-xs btn-whole-price"><i class="fa fa-money"></i></a>
+    <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle btn-sm btn-edit" type="button"id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-id="{{Id}}"><i class="fa fa-pencil"></i></button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <p>Sửa sản phẩm</p>
+                </div>
+    </div>
+    <div class="dropdown">
+            <button class="btn btn-danger dropdown-toggle btn-sm btn-delete" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-id="{{Id}}"><i class="fa fa-trash"></i></button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu3">
+                <p>Xóa sản phẩm</p>
+                </div>
+    </div>
+    <div class="dropdown" style="padding-right:30px;">
+            <button class="btn btn-warning dropdown-toggle btn-sm btn-images" type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-id="{{Id}}"><i class="fa fa-image"></i></button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu4">
+                <p>Quản lý hình ảnh</p>
+                </div>
+    </div>
+    <div class="dropdown">
+            <button class="btn btn-info dropdown-toggle btn-sm btn-quantity" type="button" id="dropdownMenu5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-id="{{Id}}"><i class="fa fa-hourglass-start"></i></button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu5">
+                <p>Quản lý số lượng</p>
+                </div>
+    </div>
+    <div class="dropdown">
+            <button class="btn btn-success dropdown-toggle btn-sm btn-whole-price" type="button" id="dropdownMenu6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-id="{{Id}}"><i class="fa fa-money"></i></button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu6">
+                <p>Quản lý giá bán</p>
+                </div>
+    </div>
         </th>
     </tr>
 </script>

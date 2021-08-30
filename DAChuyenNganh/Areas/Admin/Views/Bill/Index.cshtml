@@ -98,7 +98,14 @@
             <td>{{{PaymentMethod}}}</td>
             <td>{{{DateCreated}}}</td>
             <td>{{{BillStatus}}}</td>
-            <td><a href="#" data-id="{{Id}}" class="btn-view"><i class="fa fa-eye"></i></a></td>
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-warning dropdown-toggle btn-sm btn-view" type="button" id="dropdownMenu12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-id="{{Id}}"><i class="fa fa-eye"></i></button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu12">
+                        <p>Chi tiết hóa đơn</p>
+                        </div>
+                </div>
+        </td>
         </tr>
     </script>
 </div>

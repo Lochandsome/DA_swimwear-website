@@ -107,14 +107,23 @@
             <td>
                 @if ((await AuthorizationService.AuthorizeAsync(User, "USER", Operations.Update)).Succeeded)
                 {
-                    <a href="#" data-id="{{Id}}" class="btn-edit"><i class="fa fa-pencil-square-o"></i></a>
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle btn-sm btn-edit" type="button"id="dropdownMenu7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-id="{{Id}}"><i class="fa fa-pencil-square-o"></i></button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu7">
+                            <p>Sửa tài khoản</p>
+                            </div>
+                    </div>
                 }
             </td>
             <td>
                 @if ((await AuthorizationService.AuthorizeAsync(User, "USER", Operations.Delete)).Succeeded)
                 {
-                    <a href="#" data-id="{{Id}}" class="btn-delete"><i class="fa fa-trash-o"></i></a>
-
+                    <div class="dropdown">
+                        <button class="btn btn-danger dropdown-toggle btn-sm btn-delete" type="button"id="dropdownMenu8" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-id="{{Id}}"><i class="fa fa-trash-o"></i></button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu8">
+                            <p>Xóa tài khoản</p>
+                            </div>
+                    </div>
                 }
             </td>
         </tr>
