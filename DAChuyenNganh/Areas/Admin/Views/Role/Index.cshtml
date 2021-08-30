@@ -1,4 +1,6 @@
-﻿
+﻿@using Microsoft.AspNetCore.Authorization
+@using DAChuyenNganh.Authorization
+@inject IAuthorizationService AuthorizationService
 @{
     ViewData["Title"] = "Role list";
 }
@@ -20,12 +22,18 @@
                 <h3>Quản lý quyền</h3>
             </div>
             <div class="col-md-2 col-sm-2 col-xs-12 form-group pull-right top_search">
-                <button class="btn btn-success" id="btn-create" type="button">Thêm Vai Trò</button>
-            </div>
+                @{
+                    var result = await AuthorizationService.AuthorizeAsync(User, "USER", Operations.Create);
+                }
+                @if (result.Succeeded)
+                {
+                    <button class="btn btn-success" id="btn-create" type="button">Thêm Vai Trò</button>
+                }
+                </div>
         </div>
 
         <div class="title_right" style="padding-right:20px;">
-            
+
             <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                 <div class="input-group">
                     <input type="text" id="txt-search-keyword" class="form-control" placeholder="Search...">
@@ -90,29 +98,38 @@
             <td>{{Name}}</td>
             <td>{{Description}}</td>
             <td>
+         @if ((await AuthorizationService.AuthorizeAsync(User, "USER", Operations.Update)).Succeeded)
+         {
                     <div class="dropdown">
                         <button class="btn btn-warning dropdown-toggle btn-sm btn-grant" type="button"id="dropdownMenu9" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-id="{{Id}}"><i class="fa fa-eye-slash"></i></button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu9">
                             <p>Phần quyền chức năng</p>
                             </div>
                     </div>
+             }
+          @if ((await AuthorizationService.AuthorizeAsync(User, "USER", Operations.Update)).Succeeded)
+          {
                     <div class="dropdown" style="padding-right:20px">
                         <button class="btn btn-info dropdown-toggle btn-sm btn-edit" type="button"id="dropdownMenu10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-id="{{Id}}"><i class="fa fa-pencil-square-o"></i></button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu10">
                             <p>Sửa quyền hạn</p>
                             </div>
                     </div>
+          }
+           @if ((await AuthorizationService.AuthorizeAsync(User, "USER", Operations.Update)).Succeeded)
+           {
                     <div class="dropdown">
                         <button class="btn btn-danger dropdown-toggle btn-sm btn-delete" type="button"id="dropdownMenu11" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-id="{{Id}}"><i class="fa fa-trash-o"></i></button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu11">
                             <p>Xóa lớp quyền</p>
                             </div>
                     </div>
+           }
             </td>
         </tr>
     </script>
 </div>
-<partial name="_AddEditModal.cshtml"/>
-<partial name="_AssignPermission.cshtml"/>
+<partial name="_AddEditModal.cshtml" />
+<partial name="_AssignPermission.cshtml" />
 @*@Html.Partial("_AddEditModal.cshtml")
-@Html.Partial("_AssignPermission.cshtml")*@
+    @Html.Partial("_AssignPermission.cshtml")*@

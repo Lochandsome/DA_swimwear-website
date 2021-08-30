@@ -1,9 +1,11 @@
 ﻿using DAChuyenNganh.Application.Interfaces;
 using DAChuyenNganh.Application.ViewModels.Common;
 using DAChuyenNganh.Application.ViewModels.Product;
+using DAChuyenNganh.Authorization;
 using DAChuyenNganh.Data.Enums;
 using DAChuyenNganh.Utilities.Extensions;
 using DAChuyenNganh.Utilities.Helpers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -20,14 +22,19 @@ namespace DAChuyenNganh.Areas.Admin.Controllers
     {
         private readonly IBillService _billService;
         private readonly IHostingEnvironment _hostingEnvironment;
-        public BillController(IBillService billService, IHostingEnvironment hostingEnvironment)
+        private readonly IAuthorizationService _authorizationService;
+        public BillController(IBillService billService, IHostingEnvironment hostingEnvironment, IAuthorizationService authorizationService)
         {
             _billService = billService;
             _hostingEnvironment = hostingEnvironment;
+            _authorizationService = authorizationService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var result = await _authorizationService.AuthorizeAsync(User, "USER", Operations.Read);
+            if (result.Succeeded == false)
+                return new RedirectResult("/Admin/Login/Index");
             return View();
         }
 

@@ -1,5 +1,7 @@
 ﻿using DAChuyenNganh.Application.Interfaces;
 using DAChuyenNganh.Application.ViewModels.System;
+using DAChuyenNganh.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
@@ -12,13 +14,19 @@ namespace DAChuyenNganh.Areas.Admin.Controllers
     public class RoleController : BaseController
     {
         private readonly IRoleService _roleService;
+        private readonly IAuthorizationService _authorizationService;
 
-        public RoleController(IRoleService roleService)
+        public RoleController(IRoleService roleService, IAuthorizationService authorizationService)
         {
             _roleService = roleService;
+            _authorizationService = authorizationService;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var result = await _authorizationService.AuthorizeAsync(User, "USER", Operations.Read);
+            if (result.Succeeded == false)
+                return new RedirectResult("/Admin/Login/Index");
+
             return View();
         }
 

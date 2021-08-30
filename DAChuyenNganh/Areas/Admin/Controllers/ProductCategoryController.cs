@@ -1,6 +1,8 @@
 ﻿using DAChuyenNganh.Application.Interfaces;
 using DAChuyenNganh.Application.ViewModels.Product;
+using DAChuyenNganh.Authorization;
 using DAChuyenNganh.Utilities.Helpers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
@@ -13,13 +15,18 @@ namespace DAChuyenNganh.Areas.Admin.Controllers
     public class ProductCategoryController : BaseController
     {
         IProductCategoryService _productCategoryService;
-        public ProductCategoryController(IProductCategoryService productCategoryService)
+        private readonly IAuthorizationService _authorizationService;
+        public ProductCategoryController(IProductCategoryService productCategoryService, IAuthorizationService authorizationService)
         {
             _productCategoryService = productCategoryService;
+            _authorizationService = authorizationService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var result = await _authorizationService.AuthorizeAsync(User, "USER", Operations.Read);
+            if (result.Succeeded == false)
+                return new RedirectResult("/Admin/Login/Index");
             return View();
         }
 
