@@ -52,6 +52,21 @@ namespace DAChuyenNganh.Areas.Admin.Controllers
 
             return new OkResult();
         }
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return new BadRequestObjectResult(ModelState);
+            }
+            else
+            {
+                _billService.Delete(id);
+                _billService.Save();
+
+                return new OkObjectResult(id);
+            }
+        }
         [HttpGet]
         public IActionResult GetAllPaging(string startDate, string endDate, string keyword, int page, int pageSize)
         {

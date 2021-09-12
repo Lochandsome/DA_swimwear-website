@@ -33,6 +33,8 @@ namespace DAChuyenNganh.Application.Interfaces
 
         SizeViewModel GetSize(int id);
 
+        void Delete(int id);
+
         void Save();
     }
 }

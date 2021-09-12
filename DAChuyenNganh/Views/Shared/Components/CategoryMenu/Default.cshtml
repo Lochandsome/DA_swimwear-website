@@ -6,7 +6,7 @@
 
     <!-- Shop by category -->
     <div class="mega-menu-category">
-        <ul class="nav">
+        <ul class="nav" style="position:static">
             @*lấy ra danh sách model chính là đại diện cho productCategoryVM*@
             @foreach (var item in Model.Where(x => x.ParentId == null))
             {
@@ -16,7 +16,7 @@
                         <a href="/@item.SeoAlias-c.@(item.Id).html">@item.Name</a>
                         <div class="wrap-popup column1">
                             <div class="popup">
-                                <ul class="nav">
+                                <ul class="nav" >
                                     @foreach (var subItem in Model.Where(x => x.ParentId == item.Id))
                                     {
                                         <li><a href="/@subItem.SeoAlias-c.@(subItem.Id).html"><span>@subItem.Name</span></a></li>

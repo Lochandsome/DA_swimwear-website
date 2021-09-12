@@ -46,7 +46,7 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Phùng Thành Lộc</span></a>
+                        <a href="/Admin/Home/Index" class="site_title"><i class="fa fa-paw"></i> <span>Phùng Thành Lộc</span></a>
                     </div>
 
                     <div class="clearfix"></div>
@@ -79,7 +79,7 @@
                         <a data-toggle="tooltip" data-placement="top" title="Lock">
                             <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
                         </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="/">
                             <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                         </a>
                     </div>
@@ -105,52 +105,17 @@
                                     <i class="fa fa-envelope-o"></i>
                                     <span class="badge bg-green">6</span>
                                 </a>
-                                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">                                  
+                                   
                                     <li>
                                         <a>
-                                            <span class="image"><img src="/admin-side/images/img.jpg" alt="Profile Image" /></span>
-                                            <span>
-                                                <span>John Smith</span>
-                                                <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>
-                                            <span class="image"><img src="/admin-side/images/img.jpg" alt="Profile Image" /></span>
-                                            <span>
-                                                <span>John Smith</span>
-                                                <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>
-                                            <span class="image"><img src="/admin-side/images/img.jpg" alt="Profile Image" /></span>
-                                            <span>
-                                                <span>John Smith</span>
-                                                <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>
-                                            <span class="image"><img src="/admin-side/images/img.jpg" alt="Profile Image" /></span>
+                                            <span class="image"><img src="@User.GetSpecificClaim("Avatar")" alt="..." /></span>
                                             <span>
                                                 <span>@User.GetSpecificClaim("FullName")</span>
-                                                <span class="time">3 mins ago</span>
+                                                <span class="time">3 phút trước </span>
                                             </span>
-                                            <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                            <span class="message" style="padding-top:20px;">
+                                                Đồ án chuyên ngành Lộc Handsome MacPro
                                             </span>
                                         </a>
                                     </li>
@@ -179,7 +144,7 @@
             <!-- footer content -->
             <footer>
                 <div class="pull-right">
-                    Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                    DA-CHUYÊN NGÀNH-Phùng Thành Lộc-1811544754 <a href="https://colorlib.com">'LocHandsomeMacPro'</a>
                 </div>
                 <div class="clearfix"></div>
             </footer>

@@ -111,6 +111,31 @@
             });
         });
 
+        $('body').on('click', '.btn-delete', function (e) {
+            e.preventDefault();
+            var that = $(this).data('id');
+            tedu.confirm('Bạn có chắc muốn xóa hóa đơn?', function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/Admin/Bill/Delete",
+                    data: { id: that },
+                    dataType: "json",
+                    beforeSend: function () {
+                        tedu.startLoading();
+                    },
+                    success: function (response) {
+                        tedu.notify('Xóa hóa đơn thành công', 'success');
+                        tedu.stopLoading();
+                        loadData();
+                    },
+                    error: function (status) {
+                        tedu.notify('Có lỗi xảy ra trong quá trình xóa', 'error');
+                        tedu.stopLoading();
+                    }
+                });
+            });
+        });
+
         $('#btnSave').on('click', function (e) {
             if ($('#frmMaintainance').valid()) {
                 e.preventDefault();
