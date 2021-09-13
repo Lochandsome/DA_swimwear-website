@@ -42,15 +42,20 @@ namespace DAChuyenNganh.Controllers
         [Route("about.html")]
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+           
 
             return View();
         }
-
+        [Route("contact.html")]
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            
 
+            return View();
+        }
+        [Route("blog.html")]
+        public IActionResult Blog()
+        {
             return View();
         }
 
