@@ -129,6 +129,7 @@ namespace DAChuyenNganh.Areas.Admin.Controllers
             var sizes = _billService.GetSizes();
             return new OkObjectResult(sizes);
         }
+
         [HttpPost]
         public IActionResult ExportExcel(int billId)
         {
@@ -181,7 +182,7 @@ namespace DAChuyenNganh.Areas.Admin.Controllers
                     decimal total = (decimal)(orderDetails.Sum(x => x.Quantity * x.Price));
                     worksheet.Cells[24, 5].Value = total.ToString("N0");
 
-                    var numberWord = "Thành tiền (Viết bằng chữ): " + TextHelper.ToString(total);
+                    var numberWord = "Total amount (by word): " + TextHelper.ToString(total);
                     worksheet.Cells[26, 1].Value = numberWord;
                     var billDate = billDetail.DateCreated;
                     worksheet.Cells[28, 3].Value = billDate.Day + ", " + billDate.Month + ", " + billDate.Year;
