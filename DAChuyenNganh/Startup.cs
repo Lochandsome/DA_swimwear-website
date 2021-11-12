@@ -7,6 +7,7 @@ using DAChuyenNganh.Data.EF;
 using DAChuyenNganh.Data.EF.Repositories;
 using DAChuyenNganh.Data.Entities;
 using DAChuyenNganh.Data.IRepositories;
+using DAChuyenNganh.Extensions;
 using DAChuyenNganh.Helpers;
 using DAChuyenNganh.Infrastructure.Interfaces;
 using DAChuyenNganh.Services;
@@ -87,6 +88,7 @@ namespace DAChuyenNganh
 
             });
 
+            services.AddImageResizer();
             services.AddAutoMapper();
             // Add application services.
             //services.AddIdentity<AppUser, AppRole>(cfg => {
@@ -168,7 +170,7 @@ namespace DAChuyenNganh
                 app.UseExceptionHandler("/Home/Error");
                 //app.UseHsts();
             }
-
+            app.UseImageResizer();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             //app.UseCookiePolicy();
