@@ -133,6 +133,9 @@ namespace DAChuyenNganh
 
             services.AddTransient<IFooterRepository, FooterRepository>();
 
+            services.AddTransient<IContactRepository, ContactRepository>();
+            services.AddTransient<IFeedbackRepository, FeedbackRepository>();
+
             //Serrvices
             services.AddTransient<IProductCategoryService, ProductCategoryService>();
             services.AddTransient<IFunctionService, FunctionService>();
@@ -142,6 +145,8 @@ namespace DAChuyenNganh
             services.AddTransient<IBillService, BillService>();
             services.AddTransient<IBlogService, BlogService>();
             services.AddTransient<ICommonService, CommonService>();
+            services.AddTransient<IContactService, ContactService>();
+            services.AddTransient<IFeedbackService, FeedbackService>();
 
             services.AddTransient<IAuthorizationHandler, BaseResourceAuthorizationHandler>();
 

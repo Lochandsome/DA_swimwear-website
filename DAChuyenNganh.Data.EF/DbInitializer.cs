@@ -61,6 +61,21 @@ namespace DAChuyenNganh.Data.EF
                 var user = await _userManager.FindByNameAsync("admin");
                 await _userManager.AddToRoleAsync(user, "Admin");
             }
+            if (!_context.Contacts.Any())
+            {
+                _context.Contacts.Add(new Contact()
+                {
+                    Id = CommonConstants.DefaultContactId,
+                    Address = "331 quốc lộ 1A, An Phú Đông , Quận 12, TP-HCM",
+                    Email = "phungthanhloc.2000@gmail.com",
+                    Name = "ThanhLoc Shop",
+                    Phone = "0976 342 557",
+                    Status = Status.Active,
+                    Website = "http://thanhlocshop.com",
+                    Lat = 10.8603335,
+                    Lng = 106.6978239
+                });
+            }
             if (_context.Functions.Count() == 0)
             {
                 _context.Functions.AddRange(new List<Function>()

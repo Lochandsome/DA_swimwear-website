@@ -8,6 +8,8 @@ namespace DAChuyenNganh.Utilities.Constants
     {
         public const string DefaultFooterId = "DefaultFooterId";
 
+        public const string DefaultContactId = "default";
+
         public const string CartSession = "CartSession";
 
         public const string ProductTag = "Product";

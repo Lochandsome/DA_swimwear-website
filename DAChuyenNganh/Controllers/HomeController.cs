@@ -46,13 +46,7 @@ namespace DAChuyenNganh.Controllers
 
             return View();
         }
-        [Route("contact.html")]
-        public IActionResult Contact()
-        {
-            
-
-            return View();
-        }
+        
         [Route("blog.html")]
         public IActionResult Blog()
         {
