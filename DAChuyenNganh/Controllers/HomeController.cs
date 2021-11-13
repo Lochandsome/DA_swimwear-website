@@ -27,7 +27,7 @@ namespace DAChuyenNganh.Controllers
             _productService = productService;
             _productCategoryService = productCategoryService;
         }
-
+        [ResponseCache(CacheProfileName = "Default")]
         public IActionResult Index()
         {
             ViewData["BodyClass"] = "cms-index-index cms-home-page";
