@@ -60,6 +60,8 @@ namespace DAChuyenNganh
 
             services.AddMemoryCache();
 
+            services.AddMinResponse();
+
             // Configure Identity
             services.Configure<IdentityOptions>(options =>
             {
@@ -188,6 +190,7 @@ namespace DAChuyenNganh
             app.UseImageResizer();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseMinResponse();
             //app.UseCookiePolicy();
 
             app.UseAuthentication();
