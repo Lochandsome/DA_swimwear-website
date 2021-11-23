@@ -92,8 +92,19 @@ namespace DAChuyenNganh
 
             });
 
-            services.AddImageResizer();
+            //services.AddImageResizer();
             services.AddAutoMapper();
+            services.AddAuthentication()
+                .AddFacebook(facebookOpts =>
+                {
+                    facebookOpts.AppId = Configuration["Authentication:Facebook:AppId"];
+                    facebookOpts.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+                })
+                .AddGoogle(googleOpts =>
+                {
+                    googleOpts.ClientId = Configuration["Authentication:Google:ClientId"];
+                    googleOpts.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
+                });
             // Add application services.
             //services.AddIdentity<AppUser, AppRole>(cfg => {
             //    cfg.User.RequireUniqueEmail = true;
@@ -187,7 +198,7 @@ namespace DAChuyenNganh
                 app.UseExceptionHandler("/Home/Error");
                 //app.UseHsts();
             }
-            app.UseImageResizer();
+            //app.UseImageResizer();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseMinResponse();

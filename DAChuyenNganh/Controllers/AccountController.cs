@@ -296,7 +296,7 @@ namespace DAChuyenNganh.Controllers
             var result = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: false, bypassTwoFactor: true);
             if (result.Succeeded)
             {
-                _logger.LogInformation("Người dùng đã đăng nhập với {Name} nhà cung cấp.", info.LoginProvider);
+                _logger.LogInformation("User logged in with {Name} provider.", info.LoginProvider);
                 return RedirectToLocal(returnUrl);
             }
             if (result.IsLockedOut)
@@ -309,7 +309,7 @@ namespace DAChuyenNganh.Controllers
                 ViewData["ReturnUrl"] = returnUrl;
                 ViewData["LoginProvider"] = info.LoginProvider;
                 var email = info.Principal.FindFirstValue(ClaimTypes.Email);
-                return View("ExternalLogin", new ExternalLoginViewModel { Email = email });
+                return View("ExternalLogin", new ExternalLoginViewModel {Email = email });
             }
         }
 
@@ -326,7 +326,16 @@ namespace DAChuyenNganh.Controllers
                 {
                     throw new ApplicationException("Error loading external login information during confirmation.");
                 }
-                var user = new AppUser { UserName = model.Email, Email = model.Email };
+                //var email = info.Principal.FindFirstValue(ClaimTypes.Email);
+
+                var user = new AppUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    FullName = model.FullName,
+                    BirthDay = DateTime.Parse(model.DOB),
+                    PhoneNumber = model.PhoneNumber
+                };
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
