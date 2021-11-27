@@ -165,6 +165,7 @@ namespace DAChuyenNganh
 
             services.AddTransient<IContactRepository, ContactRepository>();
             services.AddTransient<IFeedbackRepository, FeedbackRepository>();
+            services.AddTransient<IPageRepository, PageRepository>();
 
             //Serrvices
             services.AddTransient<IProductCategoryService, ProductCategoryService>();
@@ -177,6 +178,7 @@ namespace DAChuyenNganh
             services.AddTransient<ICommonService, CommonService>();
             services.AddTransient<IContactService, ContactService>();
             services.AddTransient<IFeedbackService, FeedbackService>();
+            services.AddTransient<IPageService, PageService>();
 
             services.AddTransient<IAuthorizationHandler, BaseResourceAuthorizationHandler>();
 

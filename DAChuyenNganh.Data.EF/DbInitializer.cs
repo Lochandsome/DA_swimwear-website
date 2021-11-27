@@ -91,8 +91,9 @@ namespace DAChuyenNganh.Data.EF
                     new Function() {Id = "PRODUCT_CATEGORY",Name = "Loại sản phẩm",ParentId = "PRODUCT",SortOrder =1,Status = Status.Active,URL = "/admin/productcategory/index",IconCss = "fa-chevron-down"  },
                     new Function() {Id = "PRODUCT_LIST",Name = "Sản phẩm",ParentId = "PRODUCT",SortOrder = 2,Status = Status.Active,URL = "/admin/product/index",IconCss = "fa-chevron-down"  },
                     new Function() {Id = "BILL",Name = "Hóa đơn",ParentId = "PRODUCT",SortOrder = 3,Status = Status.Active,URL = "/admin/bill/index",IconCss = "fa-chevron-down"  },
-                    //new Function() {Id = "CONTENT",Name = "Content",ParentId = null,SortOrder = 3,Status = Status.Active,URL = "/",IconCss = "fa-table"  },
+                    new Function() {Id = "CONTENT",Name = "Quản lý nội dung",ParentId = null,SortOrder = 3,Status = Status.Active,URL = "/",IconCss = "fa-table"  },
                     //new Function() {Id = "BLOG",Name = "Blog",ParentId = "CONTENT",SortOrder = 1,Status = Status.Active,URL = "/admin/blog/index",IconCss = "fa-table"  },
+                    new Function() {Id = "Page",Name = "Page",ParentId = "CONTENT",SortOrder = 2,Status = Status.Active,URL = "/admin/page/index",IconCss = "fa-table"  },
                     //new Function() {Id = "UTILITY",Name = "Utilities",ParentId = null,SortOrder = 4,Status = Status.Active,URL = "/",IconCss = "fa-clone"  },
                     //new Function() {Id = "FOOTER",Name = "Footer",ParentId = "UTILITY",SortOrder = 1,Status = Status.Active,URL = "/admin/footer/index",IconCss = "fa-clone"  },
                     //new Function() {Id = "FEEDBACK",Name = "Feedback",ParentId = "UTILITY",SortOrder = 2,Status = Status.Active,URL = "/admin/feedback/index",IconCss = "fa-clone"  },
@@ -192,7 +193,7 @@ namespace DAChuyenNganh.Data.EF
             {
                 List<ProductCategory> listProductCategory = new List<ProductCategory>()
                 {
-                    new ProductCategory() { Name="Men's swimwear",SeoAlias="men's-swimwear",ParentId = null,Status=Status.Active,SortOrder=1,
+                    new ProductCategory() { Name="Men's fashion clothes",SeoAlias="men's fashion clothes",ParentId = null,Status=Status.Active,SortOrder=1,
                         Products = new List<Product>()
                         {
                             new Product(){Name = "Product 1",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-1",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
@@ -202,7 +203,7 @@ namespace DAChuyenNganh.Data.EF
                             new Product(){Name = "Product 5",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-5",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
                         }
                     },
-                    new ProductCategory() { Name="Women's swimwear",SeoAlias="women's-swimwear",ParentId = null,Status=Status.Active ,SortOrder=2,
+                    new ProductCategory() { Name="Women's fashion clothes",SeoAlias="women's fashion clothes",ParentId = null,Status=Status.Active ,SortOrder=2,
                         Products = new List<Product>()
                         {
                             new Product(){Name = "Product 6",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-6",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
@@ -211,7 +212,7 @@ namespace DAChuyenNganh.Data.EF
                             new Product(){Name = "Product 9",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-9",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
                             new Product(){Name = "Product 10",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-10",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
                         }},
-                    new ProductCategory() { Name="Boys swimwear",SeoAlias="boys-swimwear",ParentId = null,Status=Status.Active ,SortOrder=3,
+                    new ProductCategory() { Name="Girls clothes",SeoAlias="girls clothes",ParentId = null,Status=Status.Active ,SortOrder=3,
                         Products = new List<Product>()
                         {
                             new Product(){Name = "Product 11",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-11",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
@@ -220,7 +221,7 @@ namespace DAChuyenNganh.Data.EF
                             new Product(){Name = "Product 14",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-14",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
                             new Product(){Name = "Product 15",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-15",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
                         }},
-                    new ProductCategory() { Name="Girls swimwear",SeoAlias="girls-swimwear",ParentId = null,Status=Status.Active,SortOrder=4,
+                    new ProductCategory() { Name="Boys clothes",SeoAlias="boys clothes",ParentId = null,Status=Status.Active,SortOrder=4,
                         Products = new List<Product>()
                         {
                             new Product(){Name = "Product 16",DateCreated=DateTime.Now, Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-16",Price = 1000,Status = Status.Active,OriginalPrice = 1000},

@@ -84,6 +84,7 @@
                         <div class="short-description">
                             <h2>Tổng quan</h2>
                             @product.Description
+
                         </div>
                         <div class="product-color-size-area">
                             <div class="color-area">
@@ -139,7 +140,25 @@
                     </div>
                 </div>
             </div>
-            <div class="product-overview-tab">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="related-product-area">
+                            <div class="page-header">
+                                <h2>Mô tả sản phẩm</h2>
+                            </div>
+                            <p>
+                            @Html.Raw(product.Content)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            @*<div class="product-overview-tab">
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12">
@@ -158,7 +177,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>*@
         </div>
     </div>
 </div>

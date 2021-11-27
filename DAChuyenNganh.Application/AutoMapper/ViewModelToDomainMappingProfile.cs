@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DAChuyenNganh.Application.ViewModels.Blog;
 using DAChuyenNganh.Application.ViewModels.Common;
 using DAChuyenNganh.Application.ViewModels.Product;
 using DAChuyenNganh.Application.ViewModels.System;
@@ -43,6 +44,9 @@ namespace DAChuyenNganh.Application.AutoMapper
 
             CreateMap<FeedbackViewModel, Feedback>()
                 .ConstructUsing(c => new Feedback(c.Id, c.Name, c.Email, c.Message, c.Status));
+
+            CreateMap<PageViewModel, Page>()
+             .ConstructUsing(c => new Page(c.Id, c.Name, c.Alias, c.Content, c.Status));
         }
     }
 }
