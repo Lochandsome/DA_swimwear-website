@@ -28,7 +28,7 @@ namespace DAChuyenNganh.Controllers
         [Route("products.html")]
         public IActionResult Index(string keyword, int? pageSize, string sortBy, int page = 1)
         {
-            var catalog = new SearchResultViewModel();
+            var catalog = new ProductResultViewModel();
             ViewData["BodyClass"] = "shop_grid_full_width_page";
             if (pageSize == null)
                 pageSize = _configuration.GetValue<int>("PageSize");
