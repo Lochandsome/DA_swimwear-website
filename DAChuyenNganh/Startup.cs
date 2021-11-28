@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using DAChuyenNganh.Application.Dapper.Implementation;
+using DAChuyenNganh.Application.Dapper.Interfaces;
 using DAChuyenNganh.Application.Implementation;
 using DAChuyenNganh.Application.Interfaces;
 using DAChuyenNganh.Authorization;
@@ -179,6 +181,7 @@ namespace DAChuyenNganh
             services.AddTransient<IContactService, ContactService>();
             services.AddTransient<IFeedbackService, FeedbackService>();
             services.AddTransient<IPageService, PageService>();
+            services.AddTransient<IReportService, ReportService>();
 
             services.AddTransient<IAuthorizationHandler, BaseResourceAuthorizationHandler>();
 

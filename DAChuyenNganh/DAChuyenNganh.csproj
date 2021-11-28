@@ -53,6 +53,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DAChuyenNganh.Application.Dapper\DAChuyenNganh.Application.Dapper.csproj" />
     <ProjectReference Include="..\DAChuyenNganh.Application\DAChuyenNganh.Application.csproj" />
     <ProjectReference Include="..\DAChuyenNganh.Data.EF\DAChuyenNganh.Data.EF.csproj" />
     <ProjectReference Include="..\DAChuyenNganh.Data\DAChuyenNganh.Data.csproj" />
