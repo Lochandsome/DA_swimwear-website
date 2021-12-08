@@ -1,5 +1,7 @@
-﻿using DAChuyenNganh.Infrastructure.Interfaces;
+﻿using DAChuyenNganh.Data.Interfaces;
+using DAChuyenNganh.Infrastructure.Interfaces;
 using DAChuyenNganh.Infrastructure.SharedKernel;
+using DAChuyenNganh.Utilities.Extensions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -82,9 +84,34 @@ namespace DAChuyenNganh.Data.EF
             _context.Set<T>().RemoveRange(entities);
         }
 
+        public T UpdateVoid(T entity)
+        {
+            var dbEntity = _context.Set<T>().AsNoTracking().Single(p => p.Id.Equals(entity.Id));
+            var databaseEntry = _context.Entry(dbEntity);
+            var inputEntry = _context.Entry(entity);
+            //no items mentioned, so find out the updated entries
+            IEnumerable<string> dateProperties = typeof(IDateTracking).GetPublicProperties().Select(x => x.Name);
+            var allProperties = databaseEntry.Metadata.GetProperties()
+            .Where(x => !dateProperties.Contains(x.Name));
+            foreach (var property in allProperties)
+            {
+                var proposedValue = inputEntry.Property(property.Name).CurrentValue;
+                var originalValue = databaseEntry.Property(property.Name).OriginalValue;
+                if (proposedValue != null && !proposedValue.Equals(originalValue))
+                {
+                    databaseEntry.Property(property.Name).IsModified = true;
+                    databaseEntry.Property(property.Name).CurrentValue = proposedValue;
+                }
+            }
+            var result = _context.Set<T>().Update(dbEntity);
+            return result.Entity;
+        }
+
         public void Update(T entity)
         {
             _context.Set<T>().Update(entity);
         }
+
+
     }
 }

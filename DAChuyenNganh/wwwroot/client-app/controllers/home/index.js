@@ -11,7 +11,7 @@
             thumbHeight: 50,
             thumbAmount: 2,
 
-            navigationType: 'thumb',
+            //navigationType: 'thumb',
             navigationArrows: 'solo',
             navigationStyle: 'round',
 

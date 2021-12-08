@@ -46,6 +46,7 @@ namespace DAChuyenNganh.Application.Implementation
 
         public ProductViewModel Add(ProductViewModel productVm)
         {
+            //productVm.DateCreated = DateTime.Now;
             List<ProductTag> productTags = new List<ProductTag>();
             if (!string.IsNullOrEmpty(productVm.Tags))
             {

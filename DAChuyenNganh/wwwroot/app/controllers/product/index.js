@@ -332,7 +332,7 @@
                         Image: item.Image == null ? '<img src="/admin-side/images/user.png" width=100% height=70px' : '<img src="' + item.Image + '" width=100% height=70px />',
                         CategoryName: item.ProductCategory.Name,
                         Price: tedu.formatNumber(item.Price, 0),
-                        CreatedDate: tedu.dateTimeFormatJson(item.DateCreated),
+                        CreatedDate: tedu.dateFormatJson(item.DateCreated),
                         Status: tedu.getStatus(item.Status)
                     });
                     
