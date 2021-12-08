@@ -39,14 +39,13 @@ namespace DAChuyenNganh.Controllers
             homeVm.HomeSlides = _commonService.GetSlides("top");
             return View(homeVm);
         }
-        [Route("about.html")]
-        public IActionResult About()
+        
+        [Route("accountInformation.html")]
+        public IActionResult AccountInformation()
         {
-           
-
             return View();
         }
-        
+
         [Route("blog.html")]
         public IActionResult Blog()
         {

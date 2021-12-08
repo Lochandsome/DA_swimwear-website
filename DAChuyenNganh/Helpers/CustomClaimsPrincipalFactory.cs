@@ -28,6 +28,8 @@ namespace DAChuyenNganh.Helpers
             {
                 new Claim("Email",user.Email),
                 new Claim("FullName",user.FullName),
+                new Claim("UserName",user.UserName),
+                new Claim("PhoneNumber",user.PhoneNumber),
                 new Claim("Avatar",user.Avatar??string.Empty),
                 new Claim("Roles",string.Join(";",roles)),
                 new Claim("UserId", user.Id.ToString())
