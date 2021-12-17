@@ -1,7 +1,8 @@
 ﻿@model List<ProductCategoryViewModel>
+@inject IViewLocalizer Localizer
 <div class="navleft-container">
     <div class="mega-menu-title">
-        <h3><span>Danh mục sản phẩm</span></h3>
+        <h3><span>@Localizer["AllCategories"]</span></h3>
     </div>
 
     <!-- Shop by category -->
@@ -16,7 +17,7 @@
                         <a href="/@item.SeoAlias-c.@(item.Id).html">@item.Name</a>
                         <div class="wrap-popup column1">
                             <div class="popup">
-                                <ul class="nav" >
+                                <ul class="nav">
                                     @foreach (var subItem in Model.Where(x => x.ParentId == item.Id))
                                     {
                                         <li><a href="/@subItem.SeoAlias-c.@(subItem.Id).html"><span>@subItem.Name</span></a></li>
