@@ -98,7 +98,7 @@ namespace DAChuyenNganh
 
             });
 
-            services.AddImageResizer();
+            //services.AddImageResizer();
             services.AddAutoMapper();
             services.AddAuthentication()
                 .AddFacebook(facebookOpts =>
@@ -228,7 +228,7 @@ namespace DAChuyenNganh
                 app.UseExceptionHandler("/Home/Error");
                 //app.UseHsts();
             }
-            app.UseImageResizer();
+            //app.UseImageResizer();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseMinResponse();

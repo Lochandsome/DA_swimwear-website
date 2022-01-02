@@ -28,7 +28,7 @@ namespace DAChuyenNganh.Services
 
             MailMessage mailMessage = new MailMessage
             {
-                From = new MailAddress(_configuration["MailSettings:FromEmail"], _configuration["MailSettings:FromName"]),
+                From = new MailAddress(_configuration["MailSettings:UserName"], _configuration["MailSettings:FromName"]),
             };
             mailMessage.To.Add(email);
             mailMessage.Body = message;

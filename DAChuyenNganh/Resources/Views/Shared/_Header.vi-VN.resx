@@ -132,9 +132,6 @@
   <data name="Login" xml:space="preserve">
     <value>Đăng nhập</value>
   </data>
-  <data name="Payment" xml:space="preserve">
-    <value>Thanh toán</value>
-  </data>
   <data name="Register" xml:space="preserve">
     <value>Đăng ký</value>
   </data>
@@ -143,5 +140,8 @@
   </data>
   <data name="Wishlist" xml:space="preserve">
     <value>Yêu thích</value>
+  </data>
+  <data name="YourOrder" xml:space="preserve">
+    <value>Đơn đặt hàng</value>
   </data>
 </root>

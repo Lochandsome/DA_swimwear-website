@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using DAChuyenNganh.Data.Entities;
 using DAChuyenNganh.Data.Enums;
+using DAChuyenNganh.Models;
 using DAChuyenNganh.Models.AccountViewModels;
 using DAChuyenNganh.Services;
 using Microsoft.AspNetCore.Authentication;
@@ -13,6 +14,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using PaulMiami.AspNetCore.Mvc.Recaptcha;
 
 namespace DAChuyenNganh.Controllers
@@ -227,7 +229,6 @@ namespace DAChuyenNganh.Controllers
             {
                 return View(model);
             }
-            //MM/dd/yyy
             var user = new AppUser
             {
                 UserName = model.Email,
@@ -241,14 +242,14 @@ namespace DAChuyenNganh.Controllers
             var result = await _userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
             {
-                _logger.LogInformation("Người dùng đã tọa 1 tài khoản mưới với mật khẩu.");
+                _logger.LogInformation("User created a new account with password.");
 
-                //var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                //var callbackUrl = Url.EmailConfirmationLink(user.Id, code, Request.Scheme);
-                //await _emailSender.SendEmailConfirmationAsync(model.Email, callbackUrl);
+                var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                var callbackUrl = Url.EmailConfirmationLink(user.Id, code, Request.Scheme);
+                await _emailSender.SendEmailConfirmationAsync(model.Email, callbackUrl);
 
                 await _signInManager.SignInAsync(user, isPersistent: false);
-                _logger.LogInformation("Người dùng đã tọa 1 tài khoản mưới với mật khẩu.");
+                _logger.LogInformation("User created a new account with password.");
                 return RedirectToLocal(returnUrl);
             }
             AddErrors(result);
