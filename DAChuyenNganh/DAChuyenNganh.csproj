@@ -225,7 +225,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\Views\Home\" />
     <Folder Include="wwwroot\export-files\" />
   </ItemGroup>
 

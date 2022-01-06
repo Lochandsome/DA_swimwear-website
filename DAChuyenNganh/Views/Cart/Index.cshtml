@@ -1,4 +1,4 @@
-﻿
+﻿@inject IViewLocalizer Localizer
 @{
     ViewData["Title"] = "Cart";
 }
@@ -14,8 +14,8 @@
         <div class="row">
             <div class="col-xs-12">
                 <ul>
-                    <li class="home"> <a title="Go to Home Page" href="/">Trang chủ</a><span>&raquo;</span></li>
-                    <li><strong>Giỏ hàng</strong></li>
+                    <li class="home"> <a title="Go to Home Page" href="/">@Localizer["Home"]</a><span>&raquo;</span></li>
+                    <li><strong>@Localizer["Cart"]</strong></li>
                 </ul>
             </div>
         </div>
@@ -28,10 +28,10 @@
         <div class="main container">
             <div class="col-main">
                 <div class="cart">
-                    <h6 style="color:red"> Bạn phải chọn màu sắc và kích thước trước khi thanh toán</h6>
+                    <h6 style="color:red">@Localizer["Youmustchoosecolorandsizebeforepayment"]</h6>
                     <div class="page-content page-order">
                         <div class="page-title">
-                            <h2>Giỏ hàng</h2>
+                            <h2>@Localizer["Cart"]</h2>
                         </div>
 
 
@@ -40,18 +40,18 @@
                                 <table class="table table-bordered cart_summary">
                                     <thead>
                                         <tr>
-                                            <th width="20%" style="padding-left:20px" class="cart_product">Sản phẩm</th>
-                                            <th width="20%">Mô tả</th>
-                                            <th width="20%" style="padding-left:80px">Giá bán</th>
-                                            <th width="10%">Số lượng</th>
-                                            <th width="30%" style="padding-left:120px">Thành tiền</th>
+                                            <th width="20%" style="padding-left:20px" class="cart_product">@Localizer["Product"]</th>
+                                            <th width="20%">@Localizer["Description"]</th>
+                                            <th width="20%" style="padding-left:80px">@Localizer["Price"]</th>
+                                            <th width="10%">@Localizer["Quantity"]</th>
+                                            <th width="30%" style="padding-left:120px">@Localizer["Total"]</th>
                                             <th class="action"><i class="fa fa-trash-o"></i></th>
                                         </tr>
                                     </thead>
                                     <tbody id="table-cart-content"></tbody>
                                     <tfoot>
                                         <tr>
-                                            <td colspan="3"><strong>Tổng tiền</strong></td>
+                                            <td colspan="3"><strong>@Localizer["Total"]</strong></td>
                                             <td colspan="3"><strong><span id="lblTotalAmount"></span> </strong></td>
                                         </tr>
                                     </tfoot>
@@ -76,9 +76,9 @@
                                 </script>
                             </div>
                             <div class="cart_navigation">
-                                <a class="continue-btn" href="/products.html"><i class="fa fa-arrow-left"> </i>&nbsp; Tiếp tục mua sắm</a>
-                                <a id="btnClearAll" href="#"><i class="fa fa-remove"> </i>&nbsp; Xóa giỏ hàng </a>
-                                <a class="checkout-btn" href="/checkout.html"><i class="fa fa-check"></i> Kiểm tra sản phẩm</a>
+                                <a class="continue-btn" href="/products.html"><i class="fa fa-arrow-left"> </i>&nbsp; @Localizer["Keepshopping"]</a>
+                                <a id="btnClearAll" href="#"><i class="fa fa-remove"> </i>&nbsp; @Localizer["Deletecart"]</a>
+                                <a class="checkout-btn" href="/checkout.html"><i class="fa fa-check"></i>@Localizer["Checkout"]</a>
                             </div>
                         </div>
                     </div>

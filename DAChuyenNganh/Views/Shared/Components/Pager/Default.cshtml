@@ -1,4 +1,5 @@
 ﻿@model DAChuyenNganh.Utilities.Dtos.PagedResultBase
+@inject IViewLocalizer Localizer
 @{
     var urlTemplate = Url.Action() + "?page={0}";
     var request = ViewContext.HttpContext.Request;
@@ -17,7 +18,7 @@
 }
 <div class="pagination-area">
     <div class="col-md-4 col-sm-4 items-info">
-        Từ @Model.FirstRowOnPage đến @Model.LastRowOnPage của @Model.RowCount sản phẩm
+        @Localizer["from"] @Model.FirstRowOnPage @Localizer["to"] @Model.LastRowOnPage @Localizer["of"] @Model.RowCount @Localizer["Products"]
     </div>
     <div class="col-md-8 col-sm-8">
         @if (Model.PageCount > 1)

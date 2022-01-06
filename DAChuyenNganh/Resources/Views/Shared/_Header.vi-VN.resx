@@ -120,6 +120,9 @@
   <data name="Account" xml:space="preserve">
     <value>Tài khoản</value>
   </data>
+  <data name="Entertheproductnameyouwanttofind" xml:space="preserve">
+    <value>Nhập tên của sản phẩm bạn muốn tìm ... </value>
+  </data>
   <data name="Exit" xml:space="preserve">
     <value>Thoát</value>
   </data>

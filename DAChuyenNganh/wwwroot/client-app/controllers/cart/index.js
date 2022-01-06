@@ -24,7 +24,7 @@
                     productId: id
                 },
                 success: function () {
-                    tedu.notify('Removing product is successful.', 'success');
+                    tedu.notify(resources["RemoveCartOK"], 'success');
                     loadHeaderCart();
                     loadData();
                 }

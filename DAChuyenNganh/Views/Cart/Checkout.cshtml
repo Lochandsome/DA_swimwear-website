@@ -1,4 +1,5 @@
 ﻿@model CheckoutViewModel
+@inject IViewLocalizer Localizer
 @{
     ViewData["Title"] = "Checkout";
 }
@@ -16,8 +17,8 @@
         <div class="row">
             <div class="col-xs-12">
                 <ul>
-                    <li class="home"> <a title="Go to Home Page" href="/">Trang chủ</a><span>&raquo;</span></li>
-                    <li><strong>Thanh toán</strong></li>
+                    <li class="home"> <a title="Go to Home Page" href="/">@Localizer["Home"]</a><span>&raquo;</span></li>
+                    <li><strong>@Localizer["Pay"]</strong></li>
                 </ul>
             </div>
         </div>
@@ -30,7 +31,7 @@
         <div class="row">
             <div class="col-main col-sm-12 col-xs-12">
                 <div class="page-title">
-                    <h2>Thanh toán</h2>
+                    <h2>@Localizer["Pay"]</h2>
                 </div>
                 <div class="page-content checkout-page">
                     @if (ViewData["Success"] != null)
@@ -38,14 +39,14 @@
                         if ((bool)ViewData["Success"] == true)
                         {
                             <div class="alert alert-success">
-                                Thank you for your order. We are going to confirm your order soon.
+                                @Localizer["Thankyoufor"]                                
                             </div>
 
                         }
                         else
                         {
                             <div class="alert alert-danger">
-                                Have an error in order progress. Please contact to administrator.
+                                @Localizer["Haveanerror"]                                
                             </div>
 
                         }
@@ -57,38 +58,38 @@
 
                         <form action="/checkout.html" method="post">
                             @Html.AntiForgeryToken()
-                            <h4 class="checkout-sep">1. Phương pháp kiểm tra</h4>
+                            <h4 class="checkout-sep">@Localizer["CheckoutMethod"]</h4>
                             <div class="box-border">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <h5>Thanh toán với tư cách khách vãng lai hoặc đăng ký</h5>
-                                        <p>Đăng ký tài khoản để thuận tiên trong tương lai:</p>
+                                        <h5>@Localizer["Payas"]</h5>
+                                        <p>@Localizer["Registerwith"]</p>
                                         <br>
-                                        <h4>Đăng ký và để tiết kiệm thời gian!</h4>
-                                        <p>Lợi ích khi đăng ký:</p>
-                                        <p><i class="fa fa-check-circle text-primary"></i> Thanh toán nhanh chóng dễ dàng</p>
-                                        <p><i class="fa fa-check-circle text-primary"></i> Dễ dàng truy cập lịch sử mua hàng</p>
-                                        <button class="button" onclick="window.location.href='/register.html'"><i class="fa fa-angle-double-right"></i>&nbsp; <span>Tiếp tục</span></button>
+                                        <h4>@Localizer["Registerandsavetime"]</h4>
+                                        <p>@Localizer["Registerwithusforfutureconvenience"]</p>
+                                        <p><i class="fa fa-check-circle text-primary"></i>@Localizer["Fastandeasycheckout"]</p>
+                                        <p><i class="fa fa-check-circle text-primary"></i>@Localizer["Easyaccesstoyourorderhistoryandstatus"]</p>
+                                        <button class="button" onclick="window.location.href='/register.html'"><i class="fa fa-angle-double-right"></i>&nbsp; <span>@Localizer["Continue"]</span></button>
                                     </div>
                                     <div class="col-sm-6">
-                                        <h5>Đăng nhập</h5>
-                                        <p>Chắc kèo có tài khoản chưa ? Vui lòng đăng nhập bên dưới:</p>
-                                        <button class="button" onclick="window.location.href='/login.html'"><i class="icon-login"></i>&nbsp; <span>Đăng nhập</span></button>
+                                        <h5>@Localizer["Login"]</h5>
+                                        <p>@Localizer["AlreadyregisteredPleaseloginbelow"]</p>
+                                        <button class="button" onclick="window.location.href='/login.html'"><i class="icon-login"></i>&nbsp; <span>@Localizer["Login"]</span></button>
                                     </div>
                                 </div>
                             </div>
 
-                            <h4 class="checkout-sep">2. Thông tin vận chuyển</h4>
+                            <h4 class="checkout-sep">@Localizer["ShippingInformation"]</h4>
                             <div class="box-border" >
                                 <ul >
                                     <li class="row">
                                         <div class="col-sm-6">
-                                            <label class="required" style="font-size: 14px;">Tên đầy đủ</label>
+                                            <label class="required" style="font-size: 14px;">@Localizer["FullName"]</label>
                                             <input class="input form-control" type="text" asp-for="CustomerName" style="font-size: 14px;">
                                         </div>
                                         <!--/ [col] -->
                                         <div class="col-sm-6">
-                                            <label class="required" style="font-size: 14px;">Điện thoại người nhận</label>
+                                            <label class="required" style="font-size: 14px;">@Localizer["Phone"]</label>
                                             <input class="input form-control" type="text" asp-for="CustomerMobile" style="font-size: 14px;">
                                         </div>
                                     </li>
@@ -97,7 +98,7 @@
 
                                     <li class="row">
                                         <div class="col-xs-12">
-                                            <label class="required" style="font-size: 14px;">Địa chỉ nhận hàng</label>
+                                            <label class="required" style="font-size: 14px;">@Localizer["CustomerAddress"]</label>
                                             <input class="input form-control" type="text" asp-for="CustomerAddress" style="font-size: 14px;">
                                         </div>
                                         <!--/ [col] -->
@@ -108,7 +109,7 @@
 
                                     <li class="row">
                                         <div class="col-sm-12">
-                                            <label class="required" style="font-size: 14px;">Cần nói gì thì ghi vô</label>
+                                            <label class="required" style="font-size: 14px;">@Localizer["CustomerMessage"]</label>
                                             <input class="input form-control" type="text" asp-for="CustomerMessage" style="font-size: 14px;">
                                         </div>
                                         <!--/ [col] -->
@@ -119,7 +120,7 @@
 
                                 </ul>
                             </div>
-                            <h4 class="checkout-sep">3. Phương thức thanh toán</h4>
+                            <h4 class="checkout-sep">@Localizer["PaymentInformation"]</h4>
                             <div class="box-border">
                                 <ul>
                                     @for (int i = 0; i < Model.PaymentMethods.Count; i++)
@@ -132,19 +133,19 @@
                                         </li>
                                     }
                                 </ul>
-                                <button class="button"><i class="fa fa-angle-double-right"></i>&nbsp; <span>Tiếp tục</span></button>
+                                <button class="button"><i class="fa fa-angle-double-right"></i>&nbsp; <span>@Localizer["Continue"]</span></button>
                             </div>
-                            <h4 class="checkout-sep last">4. Kiếm tra đơn hàng</h4>
+                            <h4 class="checkout-sep last">@Localizer["OrderReview"]</h4>
                             <div class="box-border">
                                 <div class="table-responsive">
                                     <table class="table table-bordered cart_summary">
                                         <thead>
                                             <tr>
-                                                <th width="20%" style="padding-left:20px" class="cart_product">Sản phẩm</th>
-                                                <th width="20%">Mô tả</th>
-                                                <th width="20%" style="padding-left:80px">Giá bán</th>
-                                                <th width="10%">Số lượng</th>
-                                                <th width="30%" style="padding-left:120px">Thành tiền</th>                                                
+                                                <th width="20%" style="padding-left:20px" class="cart_product">@Localizer["Product"]</th>
+                                                <th width="20%">@Localizer["Description"]</th>
+                                                <th width="20%" style="padding-left:80px">@Localizer["Price"]</th>
+                                                <th width="10%">@Localizer["Quantity"]</th>
+                                                <th width="30%" style="padding-left:120px">@Localizer["Total"]</th>                                                
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -168,16 +169,16 @@
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <td colspan="3"><strong>Tổng tiền</strong></td>
+                                                <td colspan="3"><strong>@Localizer["Total"]</strong></td>
                                                 <td colspan="2"><strong>@Model.Carts.Sum(x => x.Quantity * x.Price).ToString("N0") </strong></td>
                                             </tr>
                                         </tfoot>
                                     </table>
                                 </div>
                                 <recaptcha /><span class="text-danger" id="recaptchaErrorMessage"></span>
-                                <button type="button" class="button" onclick="window.location.href='/cart.html'"><span>Trở lại giỏ hàng</span></button>
+                                <button type="button" class="button" onclick="window.location.href='/cart.html'"><span>@Localizer["Backtocart"]</span></button>
 
-                                <button type="submit" class="button pull-right"><span>Đặt ngay và luôn</span></button>
+                                <button type="submit" class="button pull-right"><span>@Localizer["Agreetoorder"]</span></button>
                             </div>
                         </form>
                     }

@@ -1,4 +1,5 @@
 ﻿@model DAChuyenNganh.Models.ProductViewModels.ProductResultViewModel
+@inject IViewLocalizer Localizer
 @{
     ViewData["Title"] = "Danh sách sản phẩm" + Model.Keyword;
     ViewData["MetaDescription"] = "Danh sách sản phẩm ";
@@ -13,8 +14,8 @@
         <div class="row">
             <div class="col-xs-12">
                 <ul>
-                    <li class="home"> <a title="Go to Home Page" href="/">Trang chủ</a><span>&raquo;</span></li>
-                    <li><strong>Danh sách sản phẩm: @Model.Keyword</strong></li>
+                    <li class="home"> <a title="Go to Home Page" href="/">@Localizer["Home"]</a><span>&raquo;</span></li>
+                    <li><strong>@Localizer["Listofproducts"] @Model.Keyword</strong></li>
                 </ul>
             </div>
         </div>
@@ -28,19 +29,20 @@
             <div class="col-main col-sm-12 col-xs-12">
                 <div class="shop-inner">
                     <div class="page-title">
-                        <h2>Danh sách sản phẩm:</h2>
+                        <h2>@Localizer["Listofproducts"]</h2>
                     </div>
                     <div class="toolbar column">
+
                         <form action="/products.html" method="get">
                             <input type="hidden" name="keyword" value="@Model.Keyword" />
                             <div class="sorter">
                                 <div class="short-by">
-                                    <label>Sắp xếp:</label>
+                                    <label>@Localizer["Sort"]</label>
                                     <select name="sortBy" asp-for="SortType"
                                             onchange="this.form.submit()" asp-items="Model.SortTypes"></select>
                                 </div>
                                 <div class="short-by page">
-                                    <label>Hiển thị:</label>
+                                    <label>@Localizer["Display"]</label>
                                     <select name="pageSize" asp-for="PageSize" onchange="this.form.submit()"
                                             asp-items="Model.PageSizes"></select>
                                 </div>
@@ -56,8 +58,8 @@
                                     <div class="product-item">
                                         <div class="item-inner">
                                             <div class="product-thumbnail">
-                                                <div class="icon-sale-label sale-left">Sale</div>
-                                                <div class="icon-new-label new-right">New</div>
+                                                <div class="icon-sale-label sale-left">@Localizer["Sale"]</div>
+                                                <div class="icon-new-label new-right">@Localizer["New"]</div>
                                                 <div class="pr-img-area">
                                                     <a title="Ipsums Dolors Untra" href="@url">
                                                         <figure> <img width="230" height="230" class="first-img" src="@item.Image" alt="@item.Name"> <img class="hover-img" src="@item.Image" alt="@item.Name"></figure>
@@ -80,7 +82,7 @@
                                                             <div class="price-box"> <span class="regular-price"> <span class="price">@item.Price.ToString("N0")</span> </span> </div>
                                                         </div>
                                                         <div class="pro-action">
-                                                            <button type="button" data-id="@item.Id" class="add-to-cart"><span> Thêm vào giỏ hàng</span> </button>
+                                                            <button type="button" data-id="@item.Id" class="add-to-cart"><span>@Localizer["Addtocart"]</span> </button>
                                                         </div>
                                                     </div>
                                                 </div>

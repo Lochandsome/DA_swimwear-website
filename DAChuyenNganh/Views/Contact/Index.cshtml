@@ -1,4 +1,5 @@
 ﻿@model ContactPageViewModel
+@inject IViewLocalizer Localizer
 @{
     ViewData["Title"] = "Contact";
 }
@@ -21,8 +22,8 @@
         <div class="row">
             <div class="col-xs-12">
                 <ul>
-                    <li class="home"> <a title="Go to Home Page" href="index.html">Home</a><span>&raquo;</span></li>
-                    <li><strong>Contact Us</strong></li>
+                    <li class="home"> <a title="Go to Home Page" href="index.html">@Localizer["Home"]</a><span>&raquo;</span></li>
+                    <li><strong>@Localizer["ContactUs"]</strong></li>
                 </ul>
             </div>
         </div>
@@ -36,13 +37,13 @@
             <section class="col-main col-sm-12">
                 <div id="contact" class="page-content page-contact">
                     <div class="page-title">
-                        <h2>Contact Us</h2>
+                        <h2>@Localizer["ContactUs"]</h2>
                     </div>
-                    <div id="message-box-conact">We're available for new projects</div>
+                    <div id="message-box-conact">@Localizer["Available"]</div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-6" id="contact_form_map">
-                            <h3 class="page-subheading">Let's get in touch</h3>
-                            <p>Lorem ipsum dolor sit amet onsectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor dapibus eget. Mauris tincidunt aliquam lectus sed vestibulum. Vestibulum bibendum suscipit mattis.</p>
+                            <h3 class="page-subheading">@Localizer["letisgetintouch"]</h3>
+                            <p>@Localizer["PleasereadourFAQbeforesendingusamessage"]</p>
                             <br />
                             <ul>
                                 <li><i class="fa fa-circle"></i> Praesent nec tincidunt turpis.</li>
@@ -63,14 +64,14 @@
                                 if ((bool)ViewData["Success"] == true)
                                 {
                                     <div class="alert alert-success">
-                                        Thank you for your feedback. We are going to reply your order soon.
+                                        @Localizer["Thankyouforyourfeedback"]
                                     </div>
 
                                 }
                                 else
                                 {
                                     <div class="alert alert-danger">
-                                        Have an error in send feedback progress. Please contact to administrator.
+                                        @Localizer["Haveanerror"]
                                     </div>
 
                                 }
@@ -81,25 +82,25 @@
                             {
                                 <div id="map" style="width:100%;height:500px;"></div>
                                 <form action="/contact.html" method="post">
-                                    <h3 class="page-subheading">Make an enquiry</h3>
+                                    <h3 class="page-subheading">@Localizer["Makeanenquiry"]</h3>
                                     <div asp-validation-summary="All" class="text-danger"></div>
                                     @Html.AntiForgeryToken()
                                     <div class="contact-form-box">
                                         <div class="form-selector">
-                                            <label>Name</label>
+                                            <label>@Localizer["Name"]</label>
                                             <input type="text" class="form-control input-sm" asp-for="Feedback.Name" />
                                         </div>
                                         <div class="form-selector">
-                                            <label>Email</label>
+                                            <label>@Localizer["Email"]</label>
                                             <input type="text" class="form-control input-sm" asp-for="Feedback.Email" />
                                         </div>
                                         <div class="form-selector">
-                                            <label>Message</label>
+                                            <label>@Localizer["Message"]</label>
                                             <textarea class="form-control input-sm" rows="10" asp-for="Feedback.Message"></textarea>
                                         </div>
                                         <div class="form-selector">
-                                            <button type="submit" class="button"><i class="icon-paper-plane icons"></i>&nbsp; <span>Send Message</span></button>
-                                            &nbsp; <a href="#" class="button">Clear</a>
+                                            <button type="submit" class="button"><i class="icon-paper-plane icons"></i>&nbsp; <span>@Localizer["SendMessage"]</span></button>
+                                            &nbsp; <a href="#" class="button">@Localizer["Clear"]</a>
                                         </div>
                                     </div>
                                 </form>

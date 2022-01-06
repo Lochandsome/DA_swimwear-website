@@ -1,4 +1,5 @@
-﻿@{
+﻿@inject IViewLocalizer Localizer
+@{
     ViewData["Title"] = "Account Information";
 }
 <!-- Breadcrumbs -->
@@ -8,8 +9,8 @@
         <div class="row">
             <div class="col-xs-12">
                 <ul>
-                    <li class="home"> <a title="Go to Home Page" href="/">Trang chủ</a><span>&raquo;</span></li>
-                    <li><strong>Tài khoản</strong></li>
+                    <li class="home"> <a title="Go to Home Page" href="/">@Localizer["Home"]</a><span>&raquo;</span></li>
+                    <li><strong>@Localizer["MyAccount"]</strong></li>
                 </ul>
             </div>
         </div>
@@ -22,7 +23,7 @@
             <div class="col-main col-sm-12 col-xs-12">
                 <div class="shop-inner">
                     <div class="page-title">
-                        <h2>Thông tin cá nhân</h2>
+                        <h2>@Localizer["MyAccount"]</h2>
                     </div>
 
                     <div class="about-page">
@@ -30,17 +31,16 @@
                             <div class="single-img-add sidebar-add-slider">
                                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                                     <!-- Wrapper for slides -->
-                                    <div class="carousel-inner" role="listbox">
+                                    <div class="carousel-inner" role="listbox">                                        
                                         <div class="item active"> <img src="@User.GetSpecificClaim("Avatar")" alt="Avatar"> </div>
-
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6">
-                            <h1>Chào mừng bạn đến với <span class="text_color">Panthers</span></h1><br>
+                            <h1>@Localizer["Welcometo"]<span class="text_color">Panther store</span></h1><br>
                             <p>
-                                <h4>Thông tin tài khoản</h4><br>
+                                <h4>@Localizer["accountinformation"]</h4><br>
                                 <br>
 
                             </p>

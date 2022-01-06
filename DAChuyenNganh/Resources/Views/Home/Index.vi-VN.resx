@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Access" xml:space="preserve">
+    <value>Lượt truy cập</value>
+  </data>
+  <data name="Always" xml:space="preserve">
+    <value>Luôn đặt khách hàng lên hàng đầu, sự hài lòng của khách hàng là niềm vui của chúng tôi.</value>
+  </data>
+  <data name="Alwaysgiveyouconfidence" xml:space="preserve">
+    <value>Luôn mang đến cho bạn sự tự tin</value>
+  </data>
+  <data name="bestseller" xml:space="preserve">
+    <value>Bán chạy nhất</value>
+  </data>
+  <data name="Bigsale" xml:space="preserve">
+    <value>Giảm giá lớn</value>
+  </data>
+  <data name="clothingfashion" xml:space="preserve">
+    <value>Quần áo thời trang</value>
+  </data>
+  <data name="Enjoyyoursummershopping" xml:space="preserve">
+    <value>Tận hưởng mùa hè mua sắm của bạn</value>
+  </data>
+  <data name="ensuring" xml:space="preserve">
+    <value>Đảm bảo quyền lợi mua sắm của khách hàng, sản phẩm của cửa hàng luôn là hàng chính hãng từ các thương hiệu nổi tiếng như Chanel, Adidas, Bold ..., cam kết hoàn tiền gấp đôi nếu sản phẩm bị lỗi 1 đổi 1 trong vòng 7 ngày</value>
+  </data>
+  <data name="Flastsale" xml:space="preserve">
+    <value>Giảm giá toàn sàn</value>
+  </data>
+  <data name="FunConfident" xml:space="preserve">
+    <value>Vui vẻ &amp; Tự tin</value>
+  </data>
+  <data name="Genuineandqualityproducts" xml:space="preserve">
+    <value>sản phẩm chính hãng và chất lượng</value>
+  </data>
+  <data name="Getitnow" xml:space="preserve">
+    <value>Tìm hiểu ngay!</value>
+  </data>
+  <data name="HawaiiTourism" xml:space="preserve">
+    <value>Du lịch Hawaii</value>
+  </data>
+  <data name="latestnews" xml:space="preserve">
+    <value>Tin mới nhất</value>
+  </data>
+  <data name="menwomen" xml:space="preserve">
+    <value>Thời trang nam &amp; Thời trang nữ</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Sản phẩm mới</value>
+  </data>
+  <data name="newproduct" xml:space="preserve">
+    <value>Sản phẩm mới </value>
+  </data>
+  <data name="offwhenbuyingatour" xml:space="preserve">
+    <value>Giảm ngay 25% khi mua tour!</value>
+  </data>
+  <data name="Ourphilosophy" xml:space="preserve">
+    <value>Triết lý của chúng tôi</value>
+  </data>
+  <data name="ourstore" xml:space="preserve">
+    <value>Cửa hàng của chúng tôi luôn quan tâm đến nhu cầu của khách hàng và làm hài lòng khách hàng với những sản phẩm tốt nhất có thể và thiết kế luôn phù hợp với xu hướng thời trang và phong cách đổi mới.</value>
+  </data>
+  <data name="Purchase" xml:space="preserve">
+    <value>Mua hàng</value>
+  </data>
+  <data name="purchases" xml:space="preserve">
+    <value>Lượt mua hàng</value>
+  </data>
+  <data name="Quickeasy" xml:space="preserve">
+    <value>Nhanh chóng &amp; Dễ dàng</value>
+  </data>
+  <data name="ratingpoints" xml:space="preserve">
+    <value>Điểm đánh giá</value>
+  </data>
+  <data name="Safeshopping" xml:space="preserve">
+    <value>Mua sắm an toàn</value>
+  </data>
+  <data name="Specialcollection" xml:space="preserve">
+    <value>Bộ sưu tập đặc biệt</value>
+  </data>
+  <data name="SpecialOffers" xml:space="preserve">
+    <value>Ưu đãi đặc biệt</value>
+  </data>
+  <data name="store" xml:space="preserve">
+    <value>cửa hàng luôn cập nhật những sản phẩm mới</value>
+  </data>
+  <data name="SummerFashionSale" xml:space="preserve">
+    <value>Giảm giá thời trang mùa hè!</value>
+  </data>
+  <data name="Supportmany" xml:space="preserve">
+    <value>Hỗ trợ nhiều phương thức thanh toán cho khách hàng, đảm bảo quyền lợi tốt nhất của khách hàng, thanh toán an toàn và không lo về giá.</value>
+  </data>
+  <data name="TopBrands" xml:space="preserve">
+    <value>Thương hiệu hàng đầu</value>
+  </data>
+  <data name="Topproducts" xml:space="preserve">
+    <value>Sản phẩm hàng đầu </value>
+  </data>
+  <data name="Uniquedesign" xml:space="preserve">
+    <value>Thiết kế độc đáo</value>
+  </data>
+  <data name="Uptooff" xml:space="preserve">
+    <value>Ưu đãi lên đến 55%</value>
+  </data>
+  <data name="Uptooffproducts" xml:space="preserve">
+    <value>Giảm giá lên đến 50% cho các sản phẩm</value>
+  </data>
+  <data name="ViewProduct" xml:space="preserve">
+    <value>Xem sản phẩm</value>
+  </data>
+  <data name="whenshoppingwithus" xml:space="preserve">
+    <value>khi mua sắm với chúng tôi</value>
+  </data>
+</root>

@@ -35,6 +35,7 @@ namespace DAChuyenNganh.Controllers
         [ResponseCache(CacheProfileName = "Default")]
         public IActionResult Index()
         {
+            var email = User.GetSpecificClaim("Email");
             var title = _localizer["Title"];
             var culture = HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture.Name;
             ViewData["BodyClass"] = "cms-index-index cms-home-page";

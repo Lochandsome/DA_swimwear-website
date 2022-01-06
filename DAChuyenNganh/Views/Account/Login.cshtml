@@ -1,6 +1,7 @@
 ﻿@using System.Linq
 @model LoginViewModel
 @inject SignInManager<AppUser> SignInManager
+@inject IViewLocalizer Localizer
 
 @{
     ViewData["Title"] = "Log in";
@@ -12,8 +13,8 @@
         <div class="row">
             <div class="col-xs-12">
                 <ul>
-                    <li class="home"> <a title="Go to Home Page" href="/">Trang chủ</a><span>&raquo;</span></li>
-                    <li><strong>Tài khoản của tôi</strong></li>
+                    <li class="home"> <a title="Go to Home Page" href="/">@Localizer["Home"]</a><span>&raquo;</span></li>
+                    <li><strong>@Localizer["Login"]</strong></li>
                 </ul>
             </div>
         </div>
@@ -27,16 +28,16 @@
             <div class="account-login">
                 <div class="box-authentication">
                     <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
-                        <h4>Đăng nhập</h4>
+                        <h4>@Localizer["Login"]</h4>
                         <div asp-validation-summary="All" class="text-danger"></div>
-                        <p class="before-login-text">Chào mừng trở lại! Đăng nhập với tài khoản của bạn</p>
+                        <p class="before-login-text">@Localizer["Welcomeback"]</p>
                         <label asp-for="Email" style="font-size:14px"></label>
                         <input type="text" asp-for="Email" class="form-control" style="font-size: 14px;">
                         <label asp-for="Password" style="font-size:14px"></label>
                         <input id="password_login" asp-for="Password" type="password" class="form-control" style="font-size: 14px;">
-                        <p class="forgot-pass"><a asp-action="ForgotPassword">Quên mật khẩu thì toang?</a></p>
+                        <p class="forgot-pass"><a asp-action="ForgotPassword">@Localizer["ForgotPassword"]</a></p>
                         <button type="submit" class="button">
-                            <i class="icon-lock icons"></i>&nbsp; <span>Đăng nhập</span>
+                            <i class="icon-lock icons"></i>&nbsp; <span>@Localizer["Login"]</span>
                         </button>
                         <label class="inline" asp-for="RememberMe">
                             <input asp-for="RememberMe" />
@@ -44,7 +45,7 @@
                     </form>
 
                     <section>
-                        <h4>Sử dụng dịch vụ khác để đăng nhập.</h4>
+                        <h4>@Localizer["Useanotherservicetologin"]</h4>
                         <hr />
                         @{
                             var loginProviders = (await SignInManager.GetExternalAuthenticationSchemesAsync()).ToList();
@@ -74,16 +75,16 @@
                     </section>
                 </div>
                 <div class="box-authentication">
-                    <h4>Đăng ký</h4>
-                    <p>Tạo 1 tài khoản cho riêng bạn</p>
+                    <h4>@Localizer["Register"]</h4>
+                    <p>@Localizer["Createyourownaccount"]</p>
 
-                    <button onclick="window.location.href='/register.html'" class="button"><i class="icon-user icons"></i>&nbsp; <span>Đăng ký</span></button>
+                    <button onclick="window.location.href='/register.html'" class="button"><i class="icon-user icons"></i>&nbsp; <span>@Localizer["Register"]</span></button>
                     <div class="register-benefits">
-                        <h5>Đăng ký ngay ngày hôm nay để hưởng ưu đãi :</h5>
+                        <h5>@Localizer["Registertodaytoenjoythediscount"]</h5>
                         <ul>
-                            <li>Tăng tốc trong quá trình thanh toán</li>
-                            <li>Kiểm tra hóa đơn dễ dàng</li>
-                            <li>Ghi lại tất cả các giao dịch mua</li>
+                            <li>@Localizer["Speedupthecheckoutprocess"]</li>
+                            <li>@Localizer["Checkbillseasily"]</li>
+                            <li>@Localizer["Recordallpurchases"]</li>
                         </ul>
                     </div>
                 </div>

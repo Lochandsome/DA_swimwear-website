@@ -1,32 +1,33 @@
 ﻿@model BillViewModel
-<h1>Panda Shop new bill</h1>
+@inject IViewLocalizer Localizer
+<h1>Panda Shop @Localizer["newbill"]</h1>
 <table>
     <tr>
-        <td>Customer Name</td>
+        <td>@Localizer["CustomerName"]</td>
         <td>@Model.CustomerName</td>
     </tr>
     <tr>
-        <td>Address</td>
+        <td>@Localizer["Address"]</td>
         <td>@Model.CustomerAddress</td>
     </tr>
     <tr>
-        <td>Phone</td>
+        <td>@Localizer["Phone"]</td>
         <td>@Model.CustomerMobile</td>
     </tr>
     <tr>
-        <td>Date</td>
+        <td>@Localizer["Date"]</td>
         <td>@Model.DateCreated.ToString("dd/MM/yyyy hh:mm")</td>
     </tr>
     <tr>
-        <td>Details</td>
+        <td>@Localizer["Details"]</td>
         <td>
             <table>
                 <thead>
                     <tr>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                        <th>Total</th>
+                        <th>@Localizer["Product"]</th>
+                        <th>@Localizer["Quantity"]</th>
+                        <th>@Localizer["Price"]</th>
+                        <th>@Localizer["Total"]</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,7 +44,7 @@
                 <tfoot>
                     <tr>
                         <td colspan="5">
-                            Total: @Model.BillDetails.Sum(x => x.Quantity * x.Price).ToString("N0")
+                            @Localizer["Total"] : @Model.BillDetails.Sum(x => x.Quantity * x.Price).ToString("N0")
                         </td>
                     </tr>
                 </tfoot>

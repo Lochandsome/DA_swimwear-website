@@ -101,9 +101,9 @@ namespace DAChuyenNganh.Controllers
 
                         _billService.Save();
 
-                        //var content = await _viewRenderService.RenderToStringAsync("Cart/_BillMail", billViewModel);
+                        var content = await _viewRenderService.RenderToStringAsync("Cart/_BillMail", billViewModel);
                         //Send mail
-                        //await _emailSender.SendEmailAsync(_configuration["MailSettings:AdminMail"], "New bill from Panda Shop", content);
+                        await _emailSender.SendEmailAsync(_configuration["MailSettings:AdminMail"], "New bill from Panda Shop", content);
                         ViewData["Success"] = true;
                     }
                     catch (Exception ex)

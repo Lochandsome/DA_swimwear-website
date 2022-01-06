@@ -1,12 +1,12 @@
 ﻿@model List<ProductCategoryViewModel>
-
+@inject IViewLocalizer Localizer
 
 <div class="mtmegamenu">
     <ul class="hidden-xs">
         <li class="mt-root demo_custom_link_cms">
             <div class="mt-root-item">
                 <a href="/">
-                    <div class="title title_font"><span class="title-text">Trang chủ</span></div>
+                    <div class="title title_font"><span class="title-text">@Localizer["Home"]</span></div>
                 </a>
             </div>
 
@@ -14,7 +14,7 @@
         <li class="mt-root demo_custom_link_cms">
             <div class="mt-root-item">
                 <a href="/page/introduction.html">
-                    <div class="title title_font"><span class="title-text">About</span></div>
+                    <div class="title title_font"><span class="title-text">@Localizer["About"]</span></div>
                 </a>
             </div>
 
@@ -22,7 +22,7 @@
         <li class="mt-root">
             <div class="mt-root-item">
                 <a href="/products.html">
-                    <div class="title title_font"><span class="title-text">Sản phẩm</span></div>
+                    <div class="title title_font"><span class="title-text">@Localizer["Product"]</span></div>
                 </a>
             </div>
             <ul class="menu-items col-xs-12">
@@ -49,19 +49,19 @@
         <li class="mt-root demo_custom_link_cms">
             <div class="mt-root-item">
                 <a href="/blog.html">
-                    <div class="title title_font"><span class="title-text">Blog</span></div>
+                    <div class="title title_font"><span class="title-text">@Localizer["Blog"]</span></div>
                 </a>
             </div>
         </li>
         <li class="mt-root">
             <div class="mt-root-item">
-                <div class="title title_font"><span class="title-text">Best Seller</span></div>
+                <div class="title title_font"><span class="title-text">@Localizer["Best"]</span></div>
             </div>
 
             <ul class="menu-items col-xs-12">
-                <p>hiện tại không có sản phẩm nào</p>
+                <p>@Localizer["Curently"]</p>
             </ul>
         </li>
-        <li><a href="/contact.html">Contacts</a></li>
+        <li><a href="/contact.html">@Localizer["Contact"]</a></li>
     </ul>
 </div>

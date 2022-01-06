@@ -1,4 +1,5 @@
 ﻿@model RegisterViewModel
+@inject IViewLocalizer Localizer
 @{
     ViewData["Title"] = "Register";
 }
@@ -9,8 +10,8 @@
         <div class="row">
             <div class="col-xs-12">
                 <ul>
-                    <li class="home"> <a title="Go to Home Page" href="/">Trang chủ</a><span>&raquo;</span></li>
-                    <li><strong>Đăng ký thành viên</strong></li>
+                    <li class="home"> <a title="Go to Home Page" href="/">@Localizer["Home"]</a><span>&raquo;</span></li>
+                    <li><strong>@Localizer["Register"]</strong></li>
                 </ul>
             </div>
         </div>
@@ -34,31 +35,31 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <label>Họ và tên:</label>
+                                    <label>@Localizer["FullName"]</label>
                                     <div class="input-text">
                                         <input type="text" asp-for="FullName" name="fullName" class="form-control" style="font-size: 14px;">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <label>Email:</label>
+                                    <label>@Localizer["Email"]</label>
                                     <div class="input-text">
                                         <input type="text" asp-for="Email" name="email" class="form-control" style="font-size: 14px;">
                                     </div>
                                 </div>
                                 <div class="col-xs-12">
-                                    <label>Mật khẩu:</label>
+                                    <label>@Localizer["Password"]</label>
                                     <div class="input-text">
                                         <input type="password" asp-for="Password" name="password" class="form-control" style="font-size: 14px;">
                                     </div>
                                 </div>
                                 <div class="col-xs-12">
-                                    <label>Nhập lại mật khẩu:</label>
+                                    <label>@Localizer["ConfirmPassword"]</label>
                                     <div class="input-text">
                                         <input type="password" asp-for="ConfirmPassword" name="confirmPassword" class="form-control" style="font-size: 14px;">
                                     </div>
                                 </div>
                                 <div class="col-xs-12">
-                                    <label>Ngày sinh:</label>
+                                    <label>@Localizer["DOB"]</label>
                                     <div class="input-text">
                                         <input type="date" asp-for="BirthDay" name="birthDay" class="form-control" style="font-size: 14px;">
                                     </div>
@@ -70,13 +71,13 @@
                                         </div>
                                     </div>*@
                                 <div class="col-sm-6">
-                                    <label>Số điện thoại:</label>
+                                    <label>@Localizer["PhoneNumber"]</label>
                                     <div class="input-text">
                                         <input type="text" name="phoneNumber" asp-for="PhoneNumber" class="form-control" style="font-size: 14px;">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <label>địa chỉ:</label>
+                                    <label>@Localizer["Address"]</label>
                                     <div class="input-text">
                                         <input type="text" name="address" asp-for="Address" class="form-control" style="font-size: 14px;">
                                     </div>
@@ -89,7 +90,7 @@
                                 </div>
                                 <div class="col-xs-12">
                                     <div class="submit-text">
-                                        <button type="submit" class="button"><i class="fa fa-user"></i>&nbsp; <span>Đăng ký</span></button>
+                                        <button type="submit" class="button"><i class="fa fa-user"></i>&nbsp; <span>@Localizer["Register"]</span></button>
                                     </div>
                                 </div>
                             </div>

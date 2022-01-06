@@ -1,21 +1,22 @@
-﻿<footer id="footer" class="footer-area pt-120" style="background-color:white">
+﻿@inject IViewLocalizer Localizer
+<footer id="footer" class="footer-area pt-60" style="background-color:white">
     <div class="container">
         <!-- subscribe area -->
         <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="subscribe-content mt-45">
-                        <h2 class="subscribe-title">Subscribe Our Newsletter <span>get reguler updates</span></h2>
-                    </div>
-                </div>
-                
+                        <h2 class="subscribe-title">@Localizer["JoinOurNewsletter"]</h2>
+                        
+                    </div>                    
+                </div>                
             </div> <!-- row -->
         </div> <!--end subscribe area -->
-        <div class="footer-widget pb-100" style="margin-top:90px; color:#fff">
+        <div class="footer-widget" style="margin-top:70px; color:#fff">
             <div class="row">
                 <div class="col-sm-6 col-md-3 col-xs-12">
                     <div class="footer-logo"><a href="index.html"><img src="/client-side/images/logopan.png" alt="fotter logo"></a> </div>
-                    <p>Đơn giản chỉ là mong muốn hoàn thiện bản thân và luôn luôn cố gắng hết sức có thể ,tuy website chưa được hoàn thiện và còn nhiều lỗi, nhưng cảm ơn bạn đã truy cập website của tôi.</p>
+                    <p>@Localizer["Simply"]</p>
                     <div class="social">
                         <ul class="inline-mode">
                             <li class="social-network fb"><a title="Connect us on Facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100038735272645"><i class="fa fa-facebook"></i></a></li>
@@ -31,26 +32,26 @@
                     <div class="footer-link d-flex justify-content-md-between">
                         <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
                             <div class="footer-title">
-                                <h4 class="title">Liên kết nhanh</h4>
+                                <h4 class="title">@Localizer["Quick"]</h4>
                             </div>
                             <ul class="link">
-                                <li><a href="/">Bản đồ</a></li>
-                                <li><a href="/">Chính sách bảo mật</a></li>
-                                <li><a href="/">Chính sách hoàn tiền</a></li>
-                                <li><a href="/">Điều khoản và dịch vụ</a></li>
-                                <li><a href="/">Định giá</a></li>
+                                <li><a href="/contact.html">@Localizer["Map"]</a></li>
+                                <li><a href="/">@Localizer["Privacy"]</a></li>
+                                <li><a href="/">@Localizer["Refund"]</a></li>
+                                <li><a href="/">@Localizer["Termns"]</a></li>
+                                <li><a href="/">@Localizer["Valuation"]</a></li>
                             </ul>
                         </div> <!-- footer wrapper -->
                         <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                             <div class="footer-title">
-                                <h4 class="title">Tài Nguyên</h4>
+                                <h4 class="title">@Localizer["Resources"]</h4>
                             </div>
                             <ul class="link">
-                                <li><a href="#">Trang chủ</a></li>
-                                <li><a href="/products.html">Sản phẩm</a></li>
-                                <li><a href="/about.html">About</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Giỏ hàng</a></li>
+                                <li><a href="#">@Localizer["Home"]</a></li>
+                                <li><a href="/products.html">@Localizer["Products"]</a></li>
+                                <li><a href="/about.html">@Localizer["About"]</a></li>
+                                <li><a href="/blog.html">@Localizer["Blog"]</a></li>
+                                <li><a href="/contact.html">@Localizer["Contact"]</a></li>
                             </ul>
                         </div> <!-- footer wrapper -->
 
@@ -61,14 +62,14 @@
                 <div class="col-lg-4 col-md-5 col-sm-5">
                     <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                         <div class="footer-title">
-                            <h4 class="title">Liên hệ</h4>
+                            <h4 class="title">@Localizer["Work"]</h4>
                         </div>
                         <div class="tabBlock" id="TabBlock-5">
                             <div class="footer-description link">NTTU-Phùng Thành Lộc.</div>
                             <div class="footer-description">
-                                <b>Thứ 2 - Thứ 6:</b> 8.30 a.m. - 5.30 p.m.<br>
-                                <b>Thứ 7:</b> 9.00 a.m. - 2.00 p.m.<br>
-                                <b>Chủ nhật:</b> Closed
+                                <b>@Localizer["mon"]</b> @Localizer["time"]<br>
+                                <b>@Localizer["Saturday"]</b> @Localizer["time2"]<br>
+                                <b>@Localizer["Sunday"]</b> @Localizer["Closed"]
                             </div>
                             <div class="payment">
                                 <ul>

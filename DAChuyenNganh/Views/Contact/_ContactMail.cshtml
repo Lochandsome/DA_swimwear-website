@@ -1,15 +1,16 @@
 ﻿@model DAChuyenNganh.Application.ViewModels.Common.FeedbackViewModel
+@inject IViewLocalizer Localizer
 <table>
     <tr>
-        <td>Name</td>
+        <td>@Localizer["Name"]</td>
         <td>@Model.Name</td>
     </tr>
     <tr>
-        <td>Email</td>
+        <td>@Localizer["Email"]</td>
         <td>@Model.Email</td>
     </tr>
     <tr>
-        <td>Message</td>
+        <td>@Localizer["Message"]</td>
         <td>@Model.Message</td>
     </tr>
 </table>
