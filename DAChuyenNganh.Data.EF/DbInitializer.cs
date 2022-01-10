@@ -53,6 +53,7 @@ namespace DAChuyenNganh.Data.EF
                     UserName = "admin",
                     FullName = "Administrator",
                     Email = "admin@gmail.com",
+                    PhoneNumber ="0123456789",
                     Balance = 0,
                     DateCreated = DateTime.Now,
                     DateModified = DateTime.Now,
