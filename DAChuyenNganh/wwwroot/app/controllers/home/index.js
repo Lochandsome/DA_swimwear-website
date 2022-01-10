@@ -3,6 +3,12 @@
         initDateRangePicker();
         loadData();
     }
+    function loadRevenue() {
+        $.ajax({
+            url : ""
+        });
+    };
+
 
     function loadData(from, to) {
 
@@ -19,22 +25,42 @@
             },
             success: function (response) {
                 initChart(response);
-
+                var template = $('#tbl-template').html();
+                var render = "";
+                if (response != '') {
+                    $.each(response.Result, function (i, item) {
+                        render += Mustache.render(template, {
+                            Date: tedu.dateFormatJson(item.Date),
+                            Revenue: item.Revenue,
+                            Profit: item.Profit,
+                            Status: tedu.getStatus(item.Status)
+                        });
+                    });                    
+                    if (render != undefined) {
+                        $('#tbl-content').html(render);
+                    }
+                }
+                else {
+                    $('#tbl-content').html('');
+                }
                 tedu.stopLoading();
-
             },
             error: function (status) {
                 tedu.notify('Có lỗi xảy ra', 'error');
                 tedu.stopLoading();
             }
-        });
+        }); 
     }
+
+
+
     function initChart(data) {
         var arrRevenue = [];
         var arrProfit = [];
 
         $.each(data, function (i, item) {
             arrRevenue.push([new Date(item.Date).getTime(), item.Revenue]);
+
         });
         $.each(data, function (i, item) {
             arrProfit.push([new Date(item.Date).getTime(), item.Profit]);
