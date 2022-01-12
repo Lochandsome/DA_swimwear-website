@@ -4,34 +4,23 @@
         <div class="header-top">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 col-md-6 col-xs-12">
-                        <!-- Default Welcome Message -->
-                        <div class="welcome-msg hidden-xs hidden-sm">@Localizer["Welcome"]</div>
+                    <div class="col-sm-5 col-md-5 col-xs-12">
+                        <!-- Default Welcome Message -->                        
                         @await Html.PartialAsync("_SelectLanguagePartial")
-                        <!-- Language &amp; Currency wrapper -->
-                        <div class="language-currency-wrapper">
-                            <div class="inner-cl">
-                                <div class="block block-currency">
-                                    <div class="item-cur"><span>USD</span><i class="fa fa-angle-down"></i></div>
-                                    <ul>
-                                        <li><a href="#"><span class="cur_icon">€</span>EUR</a></li>
-                                        <li><a href="#"><span class="cur_icon">¥</span>JPY</a></li>
-                                        <li><a class="selected" href="#"><span class="cur_icon">$</span>USD</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Language &amp; Currency wrapper -->                        
                     </div>
 
                     <!-- top links -->
-                    <div class="headerlinkmenu col-md-6 col-sm-6 col-xs-12" style="padding-top:4px">
-                        <span class="phone  hidden-xs hidden-sm">@Localizer["Hotline"]</span>
+                    <div class="headerlinkmenu col-md-7 col-sm-7 col-xs-12" style="padding-top:4px">
+                        
+                        <span class="phone  hidden-xs hidden-sm">@Localizer["Welcome"]</span>
                         <ul class="links">
+                            <li class="hidden-xs"><a title="Help Center" href="/contact.html"><span>@Localizer["Hotline"]</span></a></li>
                             <li class="hidden-xs"><a title="Help Center" href="#"><span>@Localizer["HelpCenter"]</span></a></li>
                             <!--
-                                <li><a title="Store Locator" href="#"><span>Store Locator</span></a></li>
-                            <li><a title="Checkout" href="checkout.html"><span>Checkout</span></a></li>
-                            -->
+            <li><a title="Store Locator" href="#"><span>Store Locator</span></a></li>
+        <li><a title="Checkout" href="checkout.html"><span>Checkout</span></a></li>
+        -->
                             @if (User.Identity.IsAuthenticated)
                             {
 

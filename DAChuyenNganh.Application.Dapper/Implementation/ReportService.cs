@@ -19,7 +19,13 @@ namespace DAChuyenNganh.Application.Dapper.Implementation
         {
             _configuration = configuration;
         }
-        // viết cúng giống ADO vậy.
+
+        public Task<IEnumerable<RevenueReportViewModel>> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        // viết cũng giống ADO vậy.
         public async Task<IEnumerable<RevenueReportViewModel>> GetReportAsync(string fromDate, string toDate)
         {
             using (var sqlConnection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
@@ -32,8 +38,8 @@ namespace DAChuyenNganh.Application.Dapper.Implementation
                 var firstDayOfMonth = new DateTime(now.Year, now.Month, 1);
                 var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
                 // sau đó ép nó vào từ data sẽ truyền sang, nếu mặc định 2 dòng dưới là null thì sẽ lấy ngày đầu tiên của tháng, trong tháng này, trong tháng hiện tại.
-                dynamicParameters.Add("@fromDate", string.IsNullOrEmpty(fromDate) ? firstDayOfMonth.ToString("MM/dd/yyyy") : fromDate);
-                dynamicParameters.Add("@toDate", string.IsNullOrEmpty(toDate) ? lastDayOfMonth.ToString("MM/dd/yyyy") : toDate);
+                dynamicParameters.Add("@fromDate", string.IsNullOrEmpty(fromDate) ? firstDayOfMonth.ToString("yyyy-MM-dd") : fromDate);
+                dynamicParameters.Add("@toDate", string.IsNullOrEmpty(toDate) ? lastDayOfMonth.ToString("yyyy-MM-dd") : toDate);
                 // sau khi query thì sẽ tạo 2 tham số là formdate và todate và trả về tự map sang đối tượng revenueReportViewModel thủ tục 1 nghiệp vụ thì đặt hêt trong getrevenue lấy theo từng nhánh 1
                 try
                 {

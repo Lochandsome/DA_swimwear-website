@@ -10,5 +10,7 @@ namespace DAChuyenNganh.Application.Dapper.Interfaces
     {
         Task<IEnumerable<RevenueReportViewModel>> GetReportAsync(string fromDate, string toDate);
 
+        Task<IEnumerable<RevenueReportViewModel>> GetAll();
+
     }
 }

@@ -3,15 +3,27 @@
         initDateRangePicker();
         loadData();
     }
-    function loadRevenue() {
-        $.ajax({
-            url : ""
-        });
-    };
+    //function registeEvent() {
+    //    $("#btn-export").on('click', function () {
+    //        $.ajax({
+    //            type: "POST",
+    //            url: "/Admin/Home/ImportExcel",
+    //            data: {  },
+    //            beforeSend: function () {
+    //                tedu.startLoading();
+    //            },
+    //            success: function (response) {
+    //                window.location.href = response;
+
+    //                tedu.stopLoading();
+
+    //            }
+    //        });
+    //    });
+    //};
 
 
     function loadData(from, to) {
-
         $.ajax({
             type: "GET",
             url: "/Admin/Home/GetRevenue",
@@ -28,7 +40,7 @@
                 var template = $('#tbl-template').html();
                 var render = "";
                 if (response != '') {
-                    $.each(response.Result, function (i, item) {
+                    $.each(response, function (i, item) {
                         render += Mustache.render(template, {
                             Date: tedu.dateFormatJson(item.Date),
                             Revenue: item.Revenue,
@@ -49,9 +61,26 @@
                 tedu.notify('Có lỗi xảy ra', 'error');
                 tedu.stopLoading();
             }
-        }); 
-    }
+        });
 
+        $("#btn-export").on('click', function () {
+            $.ajax({
+                type: "POST",
+                url: "/Admin/Home/ExportExcel",
+                data: {
+                    fromDate: from,
+                    toDate: to
+                },
+                beforeSend: function () {
+                    tedu.startLoading();
+                },
+                success: function (response) {
+                    window.location.href = response;
+                    tedu.stopLoading();
+                }
+            });
+        });
+    }
 
 
     function initChart(data) {

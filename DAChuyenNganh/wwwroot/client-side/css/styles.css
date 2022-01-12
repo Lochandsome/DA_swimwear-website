@@ -7339,8 +7339,8 @@ button.button.pro-add-to-cart {
 .form-add-tags input.input-text, select, textarea {
     border: 1px solid #e5e5e5;
     margin-top: 0;
-    padding: 5px 10px 7px;
-    width: 35%;
+    padding: 2px 5px 2px;
+    width: 40%;
     background: #fff;
     border-radius: 3px;
 }
