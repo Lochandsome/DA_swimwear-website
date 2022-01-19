@@ -16,7 +16,7 @@
     </tr>
     <tr>
         <td>@Localizer["Date"]</td>
-        <td>@Model.DateCreated.ToString("dd/MM/yyyy hh:mm")</td>
+        <td>@DateTime.Now.ToString("dd/MM/yyyy")</td>
     </tr>
     <tr>
         <td>@Localizer["Details"]</td>
@@ -27,7 +27,7 @@
                         <th>@Localizer["Product"]</th>
                         <th>@Localizer["Quantity"]</th>
                         <th>@Localizer["Price"]</th>
-                        <th>@Localizer["Total"]</th>
+                        <th>@Localizer["Total"]vnd</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,7 +44,7 @@
                 <tfoot>
                     <tr>
                         <td colspan="5">
-                            @Localizer["Total"] : @Model.BillDetails.Sum(x => x.Quantity * x.Price).ToString("N0")
+                            @Localizer["Total"] : @Model.BillDetails.Sum(x => x.Quantity * x.Price).ToString("N0")vnd
                         </td>
                     </tr>
                 </tfoot>
