@@ -121,7 +121,7 @@
     <value>Agree to order</value>
   </data>
   <data name="AlreadyregisteredPleaseloginbelow" xml:space="preserve">
-    <value>Already registered ? Please login below :</value>
+    <value>Already registered ? Please login below:</value>
   </data>
   <data name="Backtocart" xml:space="preserve">
     <value>Back to cart</value>
@@ -187,10 +187,10 @@
     <value>Register and save time!</value>
   </data>
   <data name="Registerwith" xml:space="preserve">
-    <value>Register with us for future convenience : </value>
+    <value>Register with us for future convenience: </value>
   </data>
   <data name="Registerwithusforfutureconvenience" xml:space="preserve">
-    <value>Register with us for future convenience : </value>
+    <value>Register with us for future convenience: </value>
   </data>
   <data name="ShippingInformation" xml:space="preserve">
     <value>2. Billing Informations</value>

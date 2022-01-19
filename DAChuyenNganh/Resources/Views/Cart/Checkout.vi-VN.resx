@@ -121,7 +121,7 @@
     <value>Đồng ý đặt hàng</value>
   </data>
   <data name="AlreadyregisteredPleaseloginbelow" xml:space="preserve">
-    <value>Bạn đã có tài khoản chưa ? Vui lòng đăng nhập bên dưới :</value>
+    <value>Bạn đã có tài khoản chưa ? Vui lòng đăng nhập bên dưới:</value>
   </data>
   <data name="Backtocart" xml:space="preserve">
     <value>Quay lại giỏ hàng</value>
@@ -166,7 +166,7 @@
     <value>Thanh toán đơn hàng</value>
   </data>
   <data name="Payas" xml:space="preserve">
-    <value>Thanh toán với tư cách khách ghé thăm hoặc đăng k</value>
+    <value>Thanh toán với tư cách là thành viên</value>
   </data>
   <data name="PaymentInformation" xml:space="preserve">
     <value>3. Phương thức thanh toán</value>
@@ -187,10 +187,10 @@
     <value>Đăng ký và để tiết kiệm thời gian!</value>
   </data>
   <data name="Registerwith" xml:space="preserve">
-    <value>Đăng ký tài khoản để thuận tiên trong tương lai : </value>
+    <value>Đăng ký tài khoản để thuận tiên trong tương lai: </value>
   </data>
   <data name="Registerwithusforfutureconvenience" xml:space="preserve">
-    <value>Đăng ký với chúng tôi để thuận tiện trong tương lai :</value>
+    <value>Đăng ký với chúng tôi để thuận tiện trong tương lai:</value>
   </data>
   <data name="ShippingInformation" xml:space="preserve">
     <value>2. Thông tin vận chuyển</value>
