@@ -120,6 +120,9 @@
   <data name="Access" xml:space="preserve">
     <value>Lượt truy cập</value>
   </data>
+  <data name="Addtocart" xml:space="preserve">
+    <value>Thêm vào giỏ hàng</value>
+  </data>
   <data name="Always" xml:space="preserve">
     <value>Luôn đặt khách hàng lên hàng đầu, sự hài lòng của khách hàng là niềm vui của chúng tôi.</value>
   </data>

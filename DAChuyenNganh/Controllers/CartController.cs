@@ -52,8 +52,6 @@ namespace DAChuyenNganh.Controllers
             {
                 return Redirect("/cart.html");
             }
-            
-
             model.Carts = session;
             return View(model);
         }
@@ -91,27 +89,33 @@ namespace DAChuyenNganh.Controllers
                         CustomerMessage = model.CustomerMessage,
                         BillDetails = details
                     };
-                    if (User.Identity.IsAuthenticated == true)
+                    if (User.Identity.IsAuthenticated == false)
                     {
-                        billViewModel.CustomerId = Guid.Parse(User.GetSpecificClaim("UserId"));
+                        return Redirect("/login.html");
                     }
-                    _billService.Create(billViewModel);
-                    try
+                    else
                     {
+                        if (User.Identity.IsAuthenticated == true)
+                        {
+                            billViewModel.CustomerId = Guid.Parse(User.GetSpecificClaim("UserId"));
+                        }
+                        _billService.Create(billViewModel);
+                        try
+                        {
 
-                        _billService.Save();
+                            _billService.Save();
 
-                        var content = await _viewRenderService.RenderToStringAsync("Cart/_BillMail", billViewModel);
-                        //Send mail
-                        await _emailSender.SendEmailAsync(_configuration["MailSettings:AdminMail"], "New bill from Panda Shop", content);
-                        ViewData["Success"] = true;
+                            var content = await _viewRenderService.RenderToStringAsync("Cart/_BillMail", billViewModel);
+                            //Send mail
+                            await _emailSender.SendEmailAsync(_configuration["MailSettings:AdminMail"], "New bill from Panda Shop", content);
+                            ViewData["Success"] = true;
+                        }
+                        catch (Exception ex)
+                        {
+                            ViewData["Success"] = false;
+                            ModelState.AddModelError("", ex.Message);
+                        }
                     }
-                    catch (Exception ex)
-                    {
-                        ViewData["Success"] = false;
-                        ModelState.AddModelError("", ex.Message);
-                    }
-
                 }
             }
             model.Carts = session;

@@ -85,12 +85,12 @@
                                     <li class="row">
                                         <div class="col-sm-6">
                                             <label class="required" style="font-size: 14px;">@Localizer["FullName"]</label>
-                                            <input class="input form-control" type="text" asp-for="CustomerName" style="font-size: 14px;">
+                                            <input class="input form-control" type="text" asp-for="CustomerName" style="font-size: 14px;" value="@User.GetSpecificClaim("FullName")">
                                         </div>
                                         <!--/ [col] -->
                                         <div class="col-sm-6">
                                             <label class="required" style="font-size: 14px;">@Localizer["Phone"]</label>
-                                            <input class="input form-control" type="text" asp-for="CustomerMobile" style="font-size: 14px;">
+                                            <input class="input form-control" type="text" asp-for="CustomerMobile" style="font-size: 14px;" value="@User.GetSpecificClaim("PhoneNumber")">
                                         </div>
                                     </li>
                                     <!--/ .row -->
