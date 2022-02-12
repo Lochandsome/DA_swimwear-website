@@ -150,7 +150,7 @@ namespace DAChuyenNganh.Areas.Admin.Controllers
                         workSheet.Cells["A" + index].Value = item.Date.ToString("yyyy-MM-dd");
                         workSheet.Cells["B" + index].Value = item.Revenue;
                         workSheet.Cells["C" + index].Value = item.Profit;
-                        //workSheet.Cells[2, 5].Value = (decimal)(revenues.Sum(item.Profit)).ToString("N0");
+                        workSheet.Cells[2, 5].Value = "=SUM(C:C)";
                         index++;                        
                     }
                     

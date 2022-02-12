@@ -134,7 +134,7 @@ namespace DAChuyenNganh.Areas.Admin.Controllers
         public IActionResult ExportExcel(int billId)
         {
             string sWebRootFolder = _hostingEnvironment.WebRootPath;
-            string sFileName = $"Bill_{billId}.xlsx";
+            string sFileName = $"Bill_{billId}_{DateTime.Now:yyyy-MM-dd-yyyy-hh-mm-ss}.xlsx";
             // Template File
             string templateDocument = Path.Combine(sWebRootFolder, "templates", "BillTemplate.xlsx");
 
